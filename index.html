@@ -25,7 +25,8 @@ html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--gold);text-decoration:none;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover{color:var(--gold);}
@@ -33,7 +34,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-cta:hover{background:var(--gold-light);}
 
 #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:6rem 2rem 4rem;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);}
-.eq-bars{display:flex;gap:4px;align-items:flex-end;justify-content:center;margin-bottom:2.5rem;height:64px;}
+.hero-logo{width:220px;height:auto;margin-bottom:1.5rem;filter:drop-shadow(0 4px 24px rgba(212,160,23,0.3));}
+display:flex;gap:4px;align-items:flex-end;justify-content:center;margin-bottom:2.5rem;height:64px;}
 .eq-bar{width:10px;border-radius:2px 2px 0 0;animation:eq-bounce 1.2s ease-in-out infinite alternate;}
 .eq-bar:nth-child(1){background:var(--red);height:30px;animation-delay:0s;}
 .eq-bar:nth-child(2){background:var(--orange);height:55px;animation-delay:0.1s;}
@@ -149,7 +151,7 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 <body>
 
 <nav>
-  <a class="nav-logo" href="#hero">A.M.P.</a>
+  <a class="nav-logo" href="#hero"><img src="AMP_logo.jpg" alt="AMP Productions"/></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#events">Events</a></li>
@@ -160,6 +162,7 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 </nav>
 
 <section id="hero">
+  <img src="AMP_logo.jpg" alt="AMP Productions" class="hero-logo"/>
   <div class="eq-bars">
     <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
     <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
