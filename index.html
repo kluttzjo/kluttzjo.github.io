@@ -33,6 +33,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--gold-light);}
 
+/* SPONSOR TICKER */
+.sponsor-ticker-wrap{background:#111;border-bottom:1px solid rgba(212,160,23,0.2);height:36px;overflow:hidden;position:relative;z-index:99;}
+.sponsor-ticker-inner{display:flex;align-items:center;height:100%;overflow:hidden;}
+.ticker-label{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.2rem;white-space:nowrap;border-right:1px solid rgba(212,160,23,0.25);flex-shrink:0;}
+.ticker-track-wrap{flex:1;overflow:hidden;position:relative;}
+.ticker-track{display:flex;align-items:center;gap:0;animation:ticker-scroll 24s linear infinite;white-space:nowrap;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:#c9c0b0;padding:0 2rem;border-right:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+.ticker-item span{color:rgba(212,160,23,0.6);font-size:0.6rem;margin-right:0.4rem;}
+@keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+
 #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:6rem 2rem 4rem;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);}
 .hero-logo{width:480px;max-width:90vw;height:auto;margin-bottom:-3rem;filter:drop-shadow(0 4px 24px rgba(212,160,23,0.3));}
 .eq-bars{display:flex;gap:4px;align-items:flex-end;justify-content:center;margin-bottom:1rem;height:40px;}
@@ -157,9 +169,39 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <li><a href="#events">Events</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="sponsors.html#our-sponsors">Sponsors</a></li>
   </ul>
   <a class="nav-cta" href="#donate">Donate</a>
 </nav>
+
+
+<!-- SPONSOR TICKER - update sponsor names here when you have real sponsors -->
+<div class="sponsor-ticker-wrap">
+  <div class="sponsor-ticker-inner">
+    <div class="ticker-label">Our Sponsors</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="hero">
   <img src="AMP_logo.png" alt="AMP Productions" class="hero-logo"/>
