@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sponsorship Opportunities – AMP Productions</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#0d0d0d;
+  --charcoal:#1a1a1a;
+  --gold:#d4a017;
+  --gold-light:#f0c040;
+  --white:#f5f0e8;
+  --muted:#a89f8c;
+  --red:#e63b2e;
+  --orange:#f07020;
+  --yellow:#f0c040;
+  --green:#3db54a;
+  --blue:#1e6fbf;
+  --purple:#7b3fbf;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold-light);}
+
+.page-hero{padding:9rem 2rem 5rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+.page-label{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h1.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:3px;color:var(--white);line-height:1;}
+.page-tagline{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;color:var(--muted);margin:1.2rem auto 0;max-width:600px;line-height:1.7;}
+
+.rainbow-rule{width:60px;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));margin:1rem 0 2rem;border-radius:2px;}
+
+.intro-section{padding:5rem 2rem;background:var(--charcoal);}
+.intro-inner{max-width:800px;margin:0 auto;text-align:center;}
+.intro-inner p{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:#c9c0b0;line-height:1.85;}
+.intro-inner .highlight{color:var(--gold);font-style:normal;font-weight:600;}
+
+.tiers-section{padding:5rem 2rem;background:var(--black);}
+.tiers-inner{max-width:900px;margin:0 auto;}
+.section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:2px;color:var(--white);line-height:1;margin-bottom:0;}
+
+.tier-card{border:1px solid rgba(212,160,23,0.2);margin-bottom:1.5rem;position:relative;overflow:hidden;transition:border-color 0.2s;}
+.tier-card:hover{border-color:rgba(212,160,23,0.5);}
+.tier-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
+.tier-presenting::before{background:linear-gradient(to bottom,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+.tier-gold::before{background:var(--gold);}
+.tier-silver::before{background:#c0c0c0;}
+.tier-bronze::before{background:#cd7f32;}
+.tier-community::before{background:var(--green);}
+
+.tier-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem 1rem 2rem;gap:1rem;flex-wrap:wrap;}
+.tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;}
+.tier-presenting .tier-name{background:linear-gradient(to right,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tier-gold .tier-name{color:var(--gold);}
+.tier-silver .tier-name{color:#c0c0c0;}
+.tier-bronze .tier-name{color:#cd7f32;}
+.tier-community .tier-name{color:var(--green);}
+.tier-amount{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);background:rgba(255,255,255,0.05);padding:6px 16px;border-radius:2px;white-space:nowrap;}
+.tier-body{padding:0 1.5rem 1.5rem 2rem;}
+.tier-body p{font-size:0.9rem;color:#c9c0b0;line-height:1.75;margin-bottom:0.75rem;}
+.tier-recognition{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:var(--muted);}
+.tier-recognition::before{content:'★';color:var(--gold);flex-shrink:0;margin-top:1px;}
+
+.cta-section{padding:5rem 2rem;background:var(--charcoal);text-align:center;}
+.cta-inner{max-width:640px;margin:0 auto;}
+.cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:2px;color:var(--white);margin-bottom:1rem;}
+.cta-inner p{font-size:0.95rem;color:#c9c0b0;line-height:1.75;margin-bottom:2rem;}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;border-radius:2px;transition:background 0.2s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{border:1px solid var(--gold);color:var(--gold);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;display:inline-block;margin-left:1rem;}
+.btn-outline:hover{background:rgba(212,160,23,0.1);}
+.disclaimer{margin-top:2rem;font-size:0.78rem;color:var(--muted);line-height:1.6;}
+
+footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3rem 2rem;text-align:center;}
+.footer-eq{display:flex;gap:3px;align-items:flex-end;justify-content:center;height:20px;margin-bottom:1.5rem;}
+.footer-eq-bar{width:6px;border-radius:1px 1px 0 0;}
+.footer-eq-bar:nth-child(1){background:var(--red);height:10px;}
+.footer-eq-bar:nth-child(2){background:var(--orange);height:18px;}
+.footer-eq-bar:nth-child(3){background:var(--yellow);height:14px;}
+.footer-eq-bar:nth-child(4){background:var(--green);height:20px;}
+.footer-eq-bar:nth-child(5){background:var(--blue);height:12px;}
+.footer-eq-bar:nth-child(6){background:var(--purple);height:16px;}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--gold);margin-bottom:0.25rem;}
+.footer-tagline{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-legal{font-size:0.72rem;color:#4a4540;}
+
+@media(max-width:600px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .tier-header{flex-direction:column;align-items:flex-start;}
+  .btn-outline{margin-left:0;margin-top:0.75rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="AMP_logo.png" alt="AMP Productions"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#donate">Donate</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-label">Partnership &amp; Giving</div>
+  <h1 class="page-title">Sponsorship Opportunities</h1>
+  <p class="page-tagline">Join us in amplifying the impact of music on our community. Your sponsorship directly supports creative arts programs at Lebanon High School.</p>
+</div>
+
+<div class="intro-section">
+  <div class="intro-inner">
+    <div class="rainbow-rule" style="margin:0 auto 2rem;"></div>
+    <p>Sponsor contributions support the operation of <span class="highlight">A.M.P. Productions</span>. Net proceeds from events directly benefit <span class="highlight">creative arts programs at Lebanon High School</span>. Every dollar invested in our mission is a dollar invested in the next generation of artists, musicians, and performers.</p>
+  </div>
+</div>
+
+<div class="tiers-section">
+  <div class="tiers-inner">
+    <div class="section-label">Giving Levels</div>
+    <h2 class="section-title">Sponsor Tiers</h2>
+    <div class="rainbow-rule"></div>
+
+    <div class="tier-card tier-presenting">
+      <div class="tier-header">
+        <div class="tier-name">🏆 Presenting Sponsor</div>
+        <div class="tier-amount">$5,000+</div>
+      </div>
+      <div class="tier-body">
+        <p>Presenting Sponsors provide critical operational support that allows A.M.P. Productions to plan, produce, and sustain high-quality musical events benefiting creative arts programs at Lebanon High School.</p>
+        <div class="tier-recognition">Prominent logo placement on all event materials, verbal recognition at every event, featured website placement, and primary sponsor acknowledgment in all communications.</div>
+      </div>
+    </div>
+
+    <div class="tier-card tier-gold">
+      <div class="tier-header">
+        <div class="tier-name">Gold Sponsor</div>
+        <div class="tier-amount">$2,500 – $4,999</div>
+      </div>
+      <div class="tier-body">
+        <p>Gold Sponsors help cover essential production and operational costs, ensuring events are professionally executed and able to generate proceeds for Lebanon High School's creative arts programs.</p>
+        <div class="tier-recognition">Logo placement on select event materials, recognition at events, and featured website listing.</div>
+      </div>
+    </div>
+
+    <div class="tier-card tier-silver">
+      <div class="tier-header">
+        <div class="tier-name">Silver Sponsor</div>
+        <div class="tier-amount">$1,000 – $2,499</div>
+      </div>
+      <div class="tier-body">
+        <p>Silver Sponsors support behind-the-scenes production needs that make each event possible and memorable for our community.</p>
+        <div class="tier-recognition">Name listing on event materials and website acknowledgment.</div>
+      </div>
+    </div>
+
+    <div class="tier-card tier-bronze">
+      <div class="tier-header">
+        <div class="tier-name">Bronze Sponsor</div>
+        <div class="tier-amount">$500 – $999</div>
+      </div>
+      <div class="tier-body">
+        <p>Bronze Sponsors provide meaningful support toward operational and production expenses that keep our events running smoothly.</p>
+        <div class="tier-recognition">Name listing in event programs or materials.</div>
+      </div>
+    </div>
+
+    <div class="tier-card tier-community">
+      <div class="tier-header">
+        <div class="tier-name">Community Sponsor</div>
+        <div class="tier-amount">Up to $499</div>
+      </div>
+      <div class="tier-body">
+        <p>Community Sponsors demonstrate grassroots support for creative arts and community impact. Every contribution, no matter the size, makes a difference.</p>
+        <div class="tier-recognition">Name listing on the website or event program.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to Make an Impact?</h2>
+    <p>We'd love to connect with you about sponsorship opportunities. Reach out to us directly to discuss how your contribution can make a difference for Lebanon High School's creative arts programs.</p>
+    <a class="btn-primary" href="index.html#contact">Contact Us to Sponsor</a>
+    <a class="btn-outline" href="index.html#donate">Make a Donation Instead</a>
+    <p class="disclaimer">AMP Productions is a registered 501(c)(3) nonprofit organization. Sponsor contributions may be tax-deductible to the extent allowed by law. Please consult your tax advisor for details.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-eq">
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+  </div>
+  <div class="footer-name">AMP Productions</div>
+  <div class="footer-tagline">Aid through Music and Philanthropy</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#events">Events</a>
+    <a href="index.html#donate">Donate</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-legal">© 2026 AMP Productions · 501(c)(3) Nonprofit · aidthroughmusic.org · All rights reserved.</div>
+</footer>
+
+</body>
+</html>
