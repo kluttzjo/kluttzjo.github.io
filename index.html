@@ -34,18 +34,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-cta:hover{background:var(--gold-light);}
 
 /* SPONSOR TICKER */
-.sponsor-ticker-wrap{background:#111;border-bottom:1px solid rgba(212,160,23,0.2);height:36px;overflow:hidden;position:relative;z-index:99;}
+.sponsor-ticker-wrap{background:linear-gradient(to right,#1a1000,#111,#1a1000);border-top:2px solid rgba(212,160,23,0.5);border-bottom:2px solid rgba(212,160,23,0.5);height:48px;overflow:hidden;position:fixed;top:64px;left:0;right:0;z-index:98;}
 .sponsor-ticker-inner{display:flex;align-items:center;height:100%;overflow:hidden;}
-.ticker-label{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.2rem;white-space:nowrap;border-right:1px solid rgba(212,160,23,0.25);flex-shrink:0;}
+.ticker-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.5rem;white-space:nowrap;border-right:2px solid rgba(212,160,23,0.4);flex-shrink:0;background:rgba(212,160,23,0.08);}
 .ticker-track-wrap{flex:1;overflow:hidden;position:relative;}
-.ticker-track{display:flex;align-items:center;gap:0;animation:ticker-scroll 24s linear infinite;white-space:nowrap;}
+.ticker-track{display:flex;align-items:center;animation:ticker-scroll 30s linear infinite;white-space:nowrap;}
 .ticker-track:hover{animation-play-state:paused;}
-.ticker-item{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:#c9c0b0;padding:0 2rem;border-right:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-.ticker-item span{color:rgba(212,160,23,0.6);font-size:0.6rem;margin-right:0.4rem;}
+.ticker-item{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:#d4c9a8;padding:0 2.5rem;border-right:1px solid rgba(212,160,23,0.15);flex-shrink:0;}
+.ticker-item .tier-icon{color:var(--gold);margin-right:0.5rem;}
 @keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:6rem 2rem 4rem;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:8rem 2rem 4rem;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);}
 .hero-logo{width:480px;max-width:90vw;height:auto;margin-bottom:-3rem;filter:drop-shadow(0 4px 24px rgba(212,160,23,0.3));}
 .eq-bars{display:flex;gap:4px;align-items:flex-end;justify-content:center;margin-bottom:1rem;height:40px;}
 .eq-bar{width:10px;border-radius:2px 2px 0 0;animation:eq-bounce 1.2s ease-in-out infinite alternate;}
@@ -95,6 +95,26 @@ h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,
 .event-tag{display:inline-block;margin-top:1rem;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border:1px solid;border-radius:2px;}
 .tag-upcoming{color:var(--green);border-color:var(--green);}
 .tag-benefit{color:var(--gold);border-color:var(--gold);}
+
+/* SPONSOR SHOWCASE */
+.showcase-presenting{display:grid;grid-template-columns:280px 1fr;gap:2.5rem;align-items:center;border:1px solid rgba(212,160,23,0.3);padding:2rem;position:relative;background:linear-gradient(135deg,rgba(212,160,23,0.04),transparent);}
+.showcase-presenting::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+.showcase-presenting-badge{position:absolute;top:-1px;right:1.5rem;background:var(--gold);color:var(--black);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:4px 12px;}
+.showcase-logo-placeholder{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px dashed rgba(212,160,23,0.25);gap:0.5rem;}
+.presenting-placeholder{background:rgba(212,160,23,0.03);}
+.gold-placeholder{background:rgba(212,160,23,0.02);}
+.showcase-placeholder-icon{font-size:2.5rem;opacity:0.25;}
+.showcase-placeholder-text{font-size:0.9rem;color:rgba(212,160,23,0.35);font-style:italic;}
+.showcase-placeholder-sub{font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.12);}
+.showcase-presenting-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:var(--gold);margin-bottom:0.75rem;}
+.showcase-presenting-desc{font-size:0.88rem;color:#c9c0b0;line-height:1.75;margin-bottom:1.2rem;}
+.showcase-learn-more{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:700;border-bottom:1px solid rgba(212,160,23,0.3);padding-bottom:2px;}
+.showcase-tier-label{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem;}
+.gold-label{color:var(--gold);}
+.showcase-gold-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.showcase-gold-card{border:1px solid rgba(212,160,23,0.2);overflow:hidden;transition:border-color 0.2s;}
+.showcase-gold-card:hover{border-color:rgba(212,160,23,0.5);}
+@media(max-width:700px){.showcase-presenting{grid-template-columns:1fr;}}
 
 #donate{background:var(--charcoal);text-align:center;}
 .donate-inner{max-width:680px;margin:0 auto;}
@@ -175,29 +195,28 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 </nav>
 
 
-<!-- SPONSOR TICKER - update sponsor names here when you have real sponsors -->
+<!-- SPONSOR TICKER -->
 <div class="sponsor-ticker-wrap">
   <div class="sponsor-ticker-inner">
-    <div class="ticker-label">Our Sponsors</div>
+    <div class="ticker-label">⭐ Our Sponsors</div>
     <div class="ticker-track-wrap">
-      <div class="ticker-track" id="tickerTrack">
-        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
-        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
-        <!-- Duplicate set for seamless loop -->
-        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
-        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="tier-icon">🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Community Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">·</span>Your Community Sponsor Here</div>
       </div>
     </div>
   </div>
@@ -287,6 +306,63 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       </div>
     </div>
     <p style="margin-top:2rem;font-size:0.82rem;color:var(--muted);font-style:italic;">Event details, venues, and ticketing links will be updated as dates approach. Check back soon or <a href="#contact" style="color:var(--gold);text-decoration:none;">contact us</a> to stay in the loop.</p>
+  </div>
+</section>
+
+<section id="sponsors-showcase" style="background:#111;padding:5rem 2rem;">
+  <div class="section-inner">
+    <div class="section-label">Proudly Supported By</div>
+    <h2 class="section-title">Our Sponsors</h2>
+    <div class="rainbow-rule"></div>
+
+    <!-- PRESENTING SPONSOR - Large featured banner -->
+    <div class="showcase-presenting">
+      <div class="showcase-presenting-badge">🏆 Presenting Sponsor</div>
+      <div class="showcase-presenting-logo">
+        <div class="showcase-logo-placeholder presenting-placeholder">
+          <div class="showcase-placeholder-icon">🏢</div>
+          <div class="showcase-placeholder-text">Your Company Name Here</div>
+          <div class="showcase-placeholder-sub">Presenting Sponsor — $5,000+</div>
+        </div>
+      </div>
+      <div class="showcase-presenting-info">
+        <div class="showcase-presenting-name">Become Our Presenting Sponsor</div>
+        <p class="showcase-presenting-desc">Your organization's name and logo featured prominently here, seen by every visitor to our website. As our Presenting Sponsor, you'll receive top-tier recognition across all our events and materials — putting your brand at the heart of our community mission.</p>
+        <a href="sponsors.html" class="showcase-learn-more">Learn About Sponsorship →</a>
+      </div>
+    </div>
+
+    <!-- GOLD SPONSORS - Medium cards -->
+    <div style="margin-top:3rem;">
+      <div class="showcase-tier-label gold-label">⭐ Gold Sponsors</div>
+      <div class="showcase-gold-grid">
+        <div class="showcase-gold-card">
+          <div class="showcase-logo-placeholder gold-placeholder">
+            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
+            <div class="showcase-placeholder-text">Your Name Here</div>
+            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
+          </div>
+        </div>
+        <div class="showcase-gold-card">
+          <div class="showcase-logo-placeholder gold-placeholder">
+            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
+            <div class="showcase-placeholder-text">Your Name Here</div>
+            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
+          </div>
+        </div>
+        <div class="showcase-gold-card">
+          <div class="showcase-logo-placeholder gold-placeholder">
+            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
+            <div class="showcase-placeholder-text">Your Name Here</div>
+            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="sponsors.html" style="font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(212,160,23,0.3);padding-bottom:2px;">View All Sponsorship Opportunities →</a>
+    </div>
   </div>
 </section>
 
