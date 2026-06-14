@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Board of Directors – AMP Productions</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#0d0d0d;
+  --charcoal:#1a1a1a;
+  --gold:#d4a017;
+  --gold-light:#f0c040;
+  --white:#f5f0e8;
+  --muted:#a89f8c;
+  --red:#e63b2e;
+  --orange:#f07020;
+  --yellow:#f0c040;
+  --green:#3db54a;
+  --blue:#1e6fbf;
+  --purple:#7b3fbf;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold-light);}
+
+.page-hero{padding:9rem 2rem 5rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+.page-label{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h1.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:3px;color:var(--white);line-height:1;}
+.page-tagline{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;color:var(--muted);margin:1.2rem auto 0;max-width:600px;line-height:1.7;}
+
+.rainbow-rule{width:60px;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));margin:1rem 0 2rem;border-radius:2px;}
+
+/* BOARD GRID - photo cards at top */
+.board-section{padding:5rem 2rem;background:var(--charcoal);}
+.board-inner{max-width:1000px;margin:0 auto;}
+.section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:2px;color:var(--white);line-height:1;margin-bottom:0;}
+
+.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:5rem;}
+.board-card{border:1px solid rgba(212,160,23,0.2);overflow:hidden;transition:border-color 0.2s;cursor:pointer;text-decoration:none;}
+.board-card:hover{border-color:rgba(212,160,23,0.6);}
+.board-card-top{height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+.board-photo{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.board-photo img{width:100%;height:100%;object-fit:cover;}
+.board-photo-placeholder{font-size:4rem;color:rgba(212,160,23,0.15);}
+.board-card-info{padding:1.2rem;}
+.board-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1px;color:var(--white);line-height:1.1;}
+.board-title{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:0.3rem;font-weight:600;}
+.board-card-link{font-size:0.72rem;color:var(--muted);margin-top:0.6rem;display:block;}
+
+/* BIO SECTIONS */
+.bios-section{padding:0 2rem 5rem;}
+.bios-inner{max-width:1000px;margin:0 auto;}
+.bio-block{display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start;padding:4rem 0;border-top:1px solid rgba(212,160,23,0.15);}
+.bio-block:first-child{border-top:none;padding-top:0;}
+.bio-photo{position:sticky;top:80px;}
+.bio-photo-img{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:flex;align-items:center;justify-content:center;border:1px solid rgba(212,160,23,0.2);overflow:hidden;}
+.bio-photo-img img{width:100%;height:100%;object-fit:cover;}
+.bio-photo-placeholder{font-size:5rem;color:rgba(212,160,23,0.1);}
+.bio-photo-caption{margin-top:1rem;text-align:center;}
+.bio-photo-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;color:var(--white);}
+.bio-photo-title{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:0.2rem;font-weight:600;line-height:1.4;}
+.bio-content p{font-size:0.95rem;line-height:1.9;color:#c9c0b0;margin-bottom:1.2rem;}
+.bio-content p:last-child{margin-bottom:0;}
+.bio-placeholder{font-family:'Lora',serif;font-style:italic;color:rgba(212,160,23,0.3);font-size:0.95rem;line-height:1.9;border:1px dashed rgba(212,160,23,0.2);padding:2rem;text-align:center;}
+
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:3rem;transition:color 0.2s;}
+.back-link:hover{color:var(--gold-light);}
+
+footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3rem 2rem;text-align:center;}
+.footer-eq{display:flex;gap:3px;align-items:flex-end;justify-content:center;height:20px;margin-bottom:1.5rem;}
+.footer-eq-bar{width:6px;border-radius:1px 1px 0 0;}
+.footer-eq-bar:nth-child(1){background:var(--red);height:10px;}
+.footer-eq-bar:nth-child(2){background:var(--orange);height:18px;}
+.footer-eq-bar:nth-child(3){background:var(--yellow);height:14px;}
+.footer-eq-bar:nth-child(4){background:var(--green);height:20px;}
+.footer-eq-bar:nth-child(5){background:var(--blue);height:12px;}
+.footer-eq-bar:nth-child(6){background:var(--purple);height:16px;}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--gold);margin-bottom:0.25rem;}
+.footer-tagline{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-legal{font-size:0.72rem;color:#4a4540;}
+
+@media(max-width:700px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .bio-block{grid-template-columns:1fr;gap:2rem;}
+  .bio-photo{position:static;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="AMP_logo.png" alt="AMP Productions"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#donate">Donate</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-label">Leadership</div>
+  <h1 class="page-title">Board of Directors</h1>
+  <p class="page-tagline">Meet the dedicated individuals behind A.M.P. Productions — united by a shared passion for music, community, and creating lasting change.</p>
+</div>
+
+<!-- BOARD OVERVIEW CARDS -->
+<div class="board-section">
+  <div class="board-inner">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Get to Know the Board</h2>
+    <div class="rainbow-rule"></div>
+    <div class="board-grid">
+
+      <a class="board-card" href="#john-kluttz">
+        <div class="board-card-top"></div>
+        <div class="board-photo"><div class="board-photo-placeholder">👤</div></div>
+        <div class="board-card-info">
+          <div class="board-name">John Kluttz</div>
+          <div class="board-title">Co-Founder & President</div>
+          <span class="board-card-link">Read Bio ↓</span>
+        </div>
+      </a>
+
+      <a class="board-card" href="#dana-foxx">
+        <div class="board-card-top"></div>
+        <div class="board-photo"><div class="board-photo-placeholder">👤</div></div>
+        <div class="board-card-info">
+          <div class="board-name">Dana Foxx</div>
+          <div class="board-title">Co-Founder & Vice President</div>
+          <span class="board-card-link">Read Bio ↓</span>
+        </div>
+      </a>
+
+      <a class="board-card" href="#hannah-leeper">
+        <div class="board-card-top"></div>
+        <div class="board-photo"><div class="board-photo-placeholder">👤</div></div>
+        <div class="board-card-info">
+          <div class="board-name">Hannah Leeper</div>
+          <div class="board-title">Secretary</div>
+          <span class="board-card-link">Read Bio ↓</span>
+        </div>
+      </a>
+
+      <a class="board-card" href="#patty-oday">
+        <div class="board-card-top"></div>
+        <div class="board-photo"><div class="board-photo-placeholder">👤</div></div>
+        <div class="board-card-info">
+          <div class="board-name">Patty O'Day</div>
+          <div class="board-title">Treasurer</div>
+          <span class="board-card-link">Read Bio ↓</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FULL BIOS -->
+<div class="bios-section">
+  <div class="bios-inner">
+
+    <!-- JOHN KLUTTZ -->
+    <div class="bio-block" id="john-kluttz">
+      <div class="bio-photo">
+        <div class="bio-photo-img"><div class="bio-photo-placeholder">👤</div></div>
+        <div class="bio-photo-caption">
+          <div class="bio-photo-name">John Kluttz</div>
+          <div class="bio-photo-title">Co-Founder & President</div>
+        </div>
+      </div>
+      <div class="bio-content">
+        <p>John Kluttz is a lifelong resident of the Lebanon community, an educator, musician, director, and community leader with a passion for creating meaningful artistic experiences that bring people together.</p>
+        <p>John earned a Bachelor's Degree in Choral Conducting and a Master's Degree in Music Education from Oregon State University before beginning a career in music education. Over the years, he has taught choral music and theater in public schools, owned and operated a private music instruction studio, and founded a youth theater camp dedicated to helping young performers develop their talents and confidence. His professional background also includes extensive leadership and management experience, mentoring and guiding teams ranging from small groups of students to large organizations of adults.</p>
+        <p>Music has always been a central part of John's life. As a student, he struggled academically and often questioned where he fit in. Everything changed when he joined choir under the direction of his high school teacher, Paul Rowton. Through music, John discovered confidence, purpose, and talents he never knew he possessed. More importantly, Mr. Rowton helped him see potential in himself when he struggled to see it on his own. The experience was so transformative that it inspired John not only to pursue higher education, but ultimately a career in music education.</p>
+        <p>Today, John credits music with helping shape the course of his life and remains actively involved in the arts despite a busy professional and family life. Throughout the years, he has performed with the Lebanon Community Chorus, appeared in numerous productions with the Lebanon Association for Theater Arts (LAFTA), contributed as a music director for local theatrical productions, and served for six years as Director of the Sweet Home Community Singing Christmas Tree.</p>
+        <p>The vision for A.M.P. Productions grew from John's desire to create something extraordinary for the community he has always called home. While directing large-scale holiday productions, he saw firsthand how powerful music and visual storytelling could be in bringing people together. There was something magical about watching a 40-foot Singing Christmas Tree come to life with dozens of performers working together to create a memorable experience for the audience. At the same time, it sparked a vision for something even bigger.</p>
+        <p>John wanted to create an event that would inspire and captivate audiences through both musical and visual excellence, while also strengthening support for arts education in local schools. He believed the community deserved a signature event that families would look forward to year after year — one that would celebrate the performing arts while creating meaningful opportunities for future generations of students.</p>
+        <p>Together with his friend and fellow co-founder, Dana Foxx, John helped transform that vision into A.M.P. Productions. Their shared goal was simple but ambitious: to create exceptional community events that inspire audiences, foster connection, and invest in the future of local performing arts programs.</p>
+        <p>Above all, John believes that the arts have the power to unite communities, create lasting traditions, and change lives. Through A.M.P. Productions, he hopes to help ensure that future generations of students have access to the same life-changing opportunities that music provided for him.</p>
+        <p>John's greatest joy, however, is his family. He and his wife are the proud parents of twelve children and grandparents to a beautiful granddaughter, with two more grandchildren on the way. Their family remains the inspiration behind his commitment to building a stronger, more connected community for generations to come.</p>
+      </div>
+    </div>
+
+    <!-- DANA FOXX -->
+    <div class="bio-block" id="dana-foxx">
+      <div class="bio-photo">
+        <div class="bio-photo-img"><div class="bio-photo-placeholder">👤</div></div>
+        <div class="bio-photo-caption">
+          <div class="bio-photo-name">Dana Foxx</div>
+          <div class="bio-photo-title">Co-Founder & Vice President</div>
+        </div>
+      </div>
+      <div class="bio-content">
+        <div class="bio-placeholder">Bio coming soon. We look forward to sharing Dana's story and her passion for music and community with you.</div>
+      </div>
+    </div>
+
+    <!-- HANNAH LEEPER -->
+    <div class="bio-block" id="hannah-leeper">
+      <div class="bio-photo">
+        <div class="bio-photo-img"><div class="bio-photo-placeholder">👤</div></div>
+        <div class="bio-photo-caption">
+          <div class="bio-photo-name">Hannah Leeper</div>
+          <div class="bio-photo-title">Secretary</div>
+        </div>
+      </div>
+      <div class="bio-content">
+        <div class="bio-placeholder">Bio coming soon. We look forward to sharing Hannah's story and her contributions to A.M.P. Productions.</div>
+      </div>
+    </div>
+
+    <!-- PATTY O'DAY -->
+    <div class="bio-block" id="patty-oday">
+      <div class="bio-photo">
+        <div class="bio-photo-img"><div class="bio-photo-placeholder">👤</div></div>
+        <div class="bio-photo-caption">
+          <div class="bio-photo-name">Patty O'Day</div>
+          <div class="bio-photo-title">Treasurer</div>
+        </div>
+      </div>
+      <div class="bio-content">
+        <div class="bio-placeholder">Bio coming soon. We look forward to sharing Patty's story and the expertise she brings to A.M.P. Productions.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-eq">
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+  </div>
+  <div class="footer-name">AMP Productions</div>
+  <div class="footer-tagline">Aid through Music and Philanthropy</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="board.html">Board</a>
+    <a href="index.html#events">Events</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="index.html#donate">Donate</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-legal">© 2026 AMP Productions · 501(c)(3) Nonprofit · aidthroughmusic.org · All rights reserved.</div>
+</footer>
+
+</body>
+</html>
