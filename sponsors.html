@@ -33,6 +33,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--gold-light);}
 
+/* SPONSOR TICKER */
+.sponsor-ticker-wrap{background:#111;border-bottom:1px solid rgba(212,160,23,0.2);height:36px;overflow:hidden;position:relative;z-index:99;}
+.sponsor-ticker-inner{display:flex;align-items:center;height:100%;overflow:hidden;}
+.ticker-label{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.2rem;white-space:nowrap;border-right:1px solid rgba(212,160,23,0.25);flex-shrink:0;}
+.ticker-track-wrap{flex:1;overflow:hidden;position:relative;}
+.ticker-track{display:flex;align-items:center;gap:0;animation:ticker-scroll 24s linear infinite;white-space:nowrap;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:#c9c0b0;padding:0 2rem;border-right:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+.ticker-item span{color:rgba(212,160,23,0.6);font-size:0.6rem;margin-right:0.4rem;}
+@keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+
 .page-hero{padding:9rem 2rem 5rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;}
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
 .page-label{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
@@ -72,6 +84,29 @@ h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.
 .tier-body p{font-size:0.9rem;color:#c9c0b0;line-height:1.75;margin-bottom:0.75rem;}
 .tier-recognition{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:var(--muted);}
 .tier-recognition::before{content:'★';color:var(--gold);flex-shrink:0;margin-top:1px;}
+
+.recognition-section{padding:5rem 2rem;background:var(--black);}
+.recog-tier{margin-bottom:3rem;}
+.recog-tier-label{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(212,160,23,0.15);}
+.recog-tier-label.presenting{background:linear-gradient(to right,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.recog-tier-label.gold{color:var(--gold);}
+.recog-tier-label.silver{color:#c0c0c0;}
+.recog-tier-label.bronze{color:#cd7f32;}
+.recog-tier-label.community{color:var(--green);}
+.recog-grid{display:grid;gap:1rem;}
+.recog-grid-presenting{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.recog-grid-gold{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.recog-grid-silver{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.recog-grid-bronze{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.recog-grid-community{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
+.recog-slot{border:1px dashed rgba(212,160,23,0.2);transition:border-color 0.2s;}
+.recog-slot:hover{border-color:rgba(212,160,23,0.5);}
+.recog-slot-inner{padding:1.2rem;text-align:center;}
+.recog-slot-presenting .recog-slot-inner{padding:2rem;}
+.recog-your-name{color:rgba(212,160,23,0.3);font-style:italic;font-size:0.85rem;}
+.recog-slot-presenting .recog-your-name{font-size:1.1rem;}
+.recog-slot-gold .recog-your-name{font-size:1rem;}
+.recog-slot-sub{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-top:0.4rem;}
 
 .cta-section{padding:5rem 2rem;background:var(--charcoal);text-align:center;}
 .cta-inner{max-width:640px;margin:0 auto;}
@@ -116,9 +151,39 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <li><a href="index.html#events">Events</a></li>
     <li><a href="index.html#gallery">Gallery</a></li>
     <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="#our-sponsors">Our Sponsors</a></li>
   </ul>
   <a class="nav-cta" href="index.html#donate">Donate</a>
 </nav>
+
+
+<!-- SPONSOR TICKER - update sponsor names here when you have real sponsors -->
+<div class="sponsor-ticker-wrap">
+  <div class="sponsor-ticker-inner">
+    <div class="ticker-label">Our Sponsors</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="ticker-item"><span>🏆</span>Your Presenting Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>⭐</span>Your Gold Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>✦</span>Your Silver Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Bronze Sponsor Here</div>
+        <div class="ticker-item"><span>·</span>Your Community Sponsor Here</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="page-hero">
   <div class="page-label">Partnership &amp; Giving</div>
@@ -191,6 +256,81 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       <div class="tier-body">
         <p>Community Sponsors demonstrate grassroots support for creative arts and community impact. Every contribution, no matter the size, makes a difference.</p>
         <div class="tier-recognition">Name listing on the website or event program.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="recognition-section" id="our-sponsors">
+  <div class="tiers-inner">
+    <div class="section-label">Thank You</div>
+    <h2 class="section-title">Our Sponsors</h2>
+    <div class="rainbow-rule"></div>
+    <p style="color:#c9c0b0;font-size:0.95rem;line-height:1.75;margin-bottom:3rem;">We are grateful for the generous support of our sponsors. Their contributions make it possible for A.M.P. Productions to bring exceptional music and community events to Lebanon and the Willamette Valley.</p>
+
+    <!-- PRESENTING -->
+    <div class="recog-tier">
+      <div class="recog-tier-label presenting">🏆 Presenting Sponsors</div>
+      <div class="recog-grid recog-grid-presenting">
+        <div class="recog-slot recog-slot-presenting">
+          <div class="recog-slot-inner">
+            <div class="recog-your-name">Your Name or Logo Here</div>
+            <div class="recog-slot-sub">Presenting Sponsor</div>
+          </div>
+        </div>
+        <div class="recog-slot recog-slot-presenting">
+          <div class="recog-slot-inner">
+            <div class="recog-your-name">Your Name or Logo Here</div>
+            <div class="recog-slot-sub">Presenting Sponsor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOLD -->
+    <div class="recog-tier">
+      <div class="recog-tier-label gold">Gold Sponsors</div>
+      <div class="recog-grid recog-grid-gold">
+        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
+      </div>
+    </div>
+
+    <!-- SILVER -->
+    <div class="recog-tier">
+      <div class="recog-tier-label silver">Silver Sponsors</div>
+      <div class="recog-grid recog-grid-silver">
+        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
+      </div>
+    </div>
+
+    <!-- BRONZE -->
+    <div class="recog-tier">
+      <div class="recog-tier-label bronze">Bronze Sponsors</div>
+      <div class="recog-grid recog-grid-bronze">
+        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
+        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
+      </div>
+    </div>
+
+    <!-- COMMUNITY -->
+    <div class="recog-tier">
+      <div class="recog-tier-label community">Community Sponsors</div>
+      <div class="recog-grid recog-grid-community">
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
+        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
       </div>
     </div>
 
