@@ -69,6 +69,29 @@ h1.hero-title span{color:var(--gold);}
 .btn-outline:hover{background:rgba(212,160,23,0.1);}
 .hero-divider{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
 
+/* HERO THREE-COLUMN LAYOUT */
+.hero-columns{display:grid;grid-template-columns:200px 1fr 200px;gap:1.5rem;align-items:center;width:100%;max-width:1200px;padding:0 1rem;}
+.hero-center{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-sponsor-panel{display:flex;flex-direction:column;align-items:center;gap:0.75rem;padding:1.2rem;border:1px solid rgba(212,160,23,0.2);background:rgba(0,0,0,0.4);position:relative;}
+.sponsor-panel-badge{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:3px 10px;position:absolute;top:-1px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.presenting-badge{background:linear-gradient(to right,var(--orange),var(--yellow));color:var(--black);}
+.gold-badge{background:var(--gold);color:var(--black);}
+.sponsor-panel-logo{width:100%;border:1px dashed rgba(212,160,23,0.2);padding:1rem 0.75rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;background:rgba(212,160,23,0.03);margin-top:0.75rem;}
+.gold-panel{padding:0.75rem;}
+.sponsor-panel-icon{font-size:2.2rem;opacity:0.2;}
+.sponsor-panel-name{font-size:0.78rem;color:rgba(212,160,23,0.35);font-style:italic;text-align:center;}
+.sponsor-panel-tier{font-size:0.6rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.15);}
+.sponsor-panel-cta{font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;color:rgba(212,160,23,0.5);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(212,160,23,0.2);padding-bottom:1px;transition:color 0.2s;}
+.sponsor-panel-cta:hover{color:var(--gold);}
+
+@media(max-width:900px){
+  .hero-columns{grid-template-columns:1fr;grid-template-rows:auto;}
+  .hero-sponsor-left{order:2;}
+  .hero-center{order:1;}
+  .hero-sponsor-right{order:3;}
+  .hero-sponsor-panel{flex-direction:row;flex-wrap:wrap;justify-content:center;}
+}
+
 section{padding:6rem 2rem;}
 .section-inner{max-width:1100px;margin:0 auto;}
 .section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
@@ -224,18 +247,53 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 </div>
 
 <section id="hero">
-  <img src="AMP_logo.png" alt="AMP Productions" class="hero-logo"/>
-  <div class="eq-bars">
-    <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-    <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-    <div class="eq-bar"></div>
-  </div>
-  <div class="hero-sub">Aid through Music and Philanthropy</div>
-  <h1 class="hero-title"><span>AMP</span><br>Productions</h1>
-  <p class="hero-tagline">Where music meets purpose — raising voices, raising lives.</p>
-  <div class="hero-btns">
-    <a class="btn-primary" href="#events">Upcoming Events</a>
-    <a class="btn-outline" href="#donate">Support Our Mission</a>
+  <!-- THREE COLUMN HERO: Presenting Sponsor | Center Content | Gold Sponsors -->
+  <div class="hero-columns">
+
+    <!-- LEFT: PRESENTING SPONSOR -->
+    <div class="hero-sponsor-panel hero-sponsor-left">
+      <div class="sponsor-panel-badge presenting-badge">🏆 Presenting Sponsor</div>
+      <div class="sponsor-panel-logo">
+        <div class="sponsor-panel-icon">🏢</div>
+        <div class="sponsor-panel-name">Your Company Name Here</div>
+        <div class="sponsor-panel-tier">Presenting Sponsor</div>
+      </div>
+      <a href="sponsors.html" class="sponsor-panel-cta">Become a Sponsor →</a>
+    </div>
+
+    <!-- CENTER: MAIN HERO CONTENT -->
+    <div class="hero-center">
+      <img src="AMP_logo.png" alt="AMP Productions" class="hero-logo"/>
+      <div class="eq-bars">
+        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+      </div>
+      <div class="hero-sub">Aid through Music and Philanthropy</div>
+      <h1 class="hero-title"><span>AMP</span><br>Productions</h1>
+      <p class="hero-tagline">Where music meets purpose — raising voices, raising lives.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#events">Upcoming Events</a>
+        <a class="btn-outline" href="#donate">Support Our Mission</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: GOLD SPONSORS -->
+    <div class="hero-sponsor-panel hero-sponsor-right">
+      <div class="sponsor-panel-badge gold-badge">⭐ Gold Sponsors</div>
+      <div class="sponsor-panel-logo gold-panel">
+        <div class="sponsor-panel-icon" style="font-size:1.8rem;">🏢</div>
+        <div class="sponsor-panel-name" style="font-size:0.85rem;">Your Name Here</div>
+        <div class="sponsor-panel-tier">Gold Sponsor</div>
+      </div>
+      <div class="sponsor-panel-logo gold-panel" style="margin-top:0.75rem;">
+        <div class="sponsor-panel-icon" style="font-size:1.8rem;">🏢</div>
+        <div class="sponsor-panel-name" style="font-size:0.85rem;">Your Name Here</div>
+        <div class="sponsor-panel-tier">Gold Sponsor</div>
+      </div>
+      <a href="sponsors.html" class="sponsor-panel-cta">Become a Sponsor →</a>
+    </div>
+
   </div>
   <div class="hero-divider"></div>
 </section>
@@ -307,63 +365,6 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       </div>
     </div>
     <p style="margin-top:2rem;font-size:0.82rem;color:var(--muted);font-style:italic;">Event details, venues, and ticketing links will be updated as dates approach. Check back soon or <a href="#contact" style="color:var(--gold);text-decoration:none;">contact us</a> to stay in the loop.</p>
-  </div>
-</section>
-
-<section id="sponsors-showcase" style="background:#111;padding:5rem 2rem;">
-  <div class="section-inner">
-    <div class="section-label">Proudly Supported By</div>
-    <h2 class="section-title">Our Sponsors</h2>
-    <div class="rainbow-rule"></div>
-
-    <!-- PRESENTING SPONSOR - Large featured banner -->
-    <div class="showcase-presenting">
-      <div class="showcase-presenting-badge">🏆 Presenting Sponsor</div>
-      <div class="showcase-presenting-logo">
-        <div class="showcase-logo-placeholder presenting-placeholder">
-          <div class="showcase-placeholder-icon">🏢</div>
-          <div class="showcase-placeholder-text">Your Company Name Here</div>
-          <div class="showcase-placeholder-sub">Presenting Sponsor — $5,000+</div>
-        </div>
-      </div>
-      <div class="showcase-presenting-info">
-        <div class="showcase-presenting-name">Become Our Presenting Sponsor</div>
-        <p class="showcase-presenting-desc">Your organization's name and logo featured prominently here, seen by every visitor to our website. As our Presenting Sponsor, you'll receive top-tier recognition across all our events and materials — putting your brand at the heart of our community mission.</p>
-        <a href="sponsors.html" class="showcase-learn-more">Learn About Sponsorship →</a>
-      </div>
-    </div>
-
-    <!-- GOLD SPONSORS - Medium cards -->
-    <div style="margin-top:3rem;">
-      <div class="showcase-tier-label gold-label">⭐ Gold Sponsors</div>
-      <div class="showcase-gold-grid">
-        <div class="showcase-gold-card">
-          <div class="showcase-logo-placeholder gold-placeholder">
-            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
-            <div class="showcase-placeholder-text">Your Name Here</div>
-            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
-          </div>
-        </div>
-        <div class="showcase-gold-card">
-          <div class="showcase-logo-placeholder gold-placeholder">
-            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
-            <div class="showcase-placeholder-text">Your Name Here</div>
-            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
-          </div>
-        </div>
-        <div class="showcase-gold-card">
-          <div class="showcase-logo-placeholder gold-placeholder">
-            <div class="showcase-placeholder-icon" style="font-size:1.8rem;">🏢</div>
-            <div class="showcase-placeholder-text">Your Name Here</div>
-            <div class="showcase-placeholder-sub">Gold Sponsor — $2,500+</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:2rem;text-align:center;">
-      <a href="sponsors.html" style="font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(212,160,23,0.3);padding-bottom:2px;">View All Sponsorship Opportunities →</a>
-    </div>
   </div>
 </section>
 
