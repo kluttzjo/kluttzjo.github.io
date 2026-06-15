@@ -28,11 +28,19 @@ body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-se
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
 .nav-logo{text-decoration:none;display:flex;align-items:center;}
 .nav-logo img{height:44px;width:auto;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gold);}
-.nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;flex-shrink:0;}
 .nav-cta:hover{background:var(--gold-light);}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-menu{position:fixed;top:64px;left:0;right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,23,0.25);padding:0;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.35s ease;z-index:97;}
+.nav-menu.open{max-height:500px;padding:1rem 0;}
+.nav-menu ul{list-style:none;display:flex;flex-direction:column;}
+.nav-menu ul li a{display:block;padding:0.9rem 2rem;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(212,160,23,0.08);transition:color 0.2s,background 0.2s;}
+.nav-menu ul li a:hover{color:var(--gold);background:rgba(212,160,23,0.05);}
+.nav-menu ul li:last-child a{border-bottom:none;}
 
 /* SPONSOR TICKER */
 .sponsor-ticker-wrap{background:linear-gradient(to right,#1a1000,#111,#1a1000);border-top:2px solid rgba(212,160,23,0.5);border-bottom:2px solid rgba(212,160,23,0.5);height:48px;overflow:hidden;position:fixed;top:64px;left:0;right:0;z-index:98;}
@@ -200,7 +208,6 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
   .gallery-item.wide{grid-column:span 1;}
   nav{padding:0 1.2rem;}
-  .nav-links{display:none;}
 }
 </style>
 </head>
@@ -208,14 +215,21 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 
 <nav>
   <a class="nav-logo" href="#hero"><img src="AMP_logo.png" alt="AMP Productions"/></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="sponsors.html#our-sponsors">Sponsors</a></li>
-  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <a class="nav-cta" href="#donate">Donate</a>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#events" onclick="closeMenu()">Events</a></li>
+    <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    <li><a href="sponsors.html#our-sponsors" onclick="closeMenu()">Sponsors</a></li>
+    <li><a href="board.html" onclick="closeMenu()">Board of Directors</a></li>
+    <li><a href="index.html#donate" onclick="closeMenu()">Donate</a></li>
+  </ul>
 </nav>
 
 
@@ -492,5 +506,23 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
   <div class="footer-legal">© 2026 AMP Productions · 501(c)(3) Nonprofit · aidthroughmusic.org · All rights reserved.</div>
 </footer>
 
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navMenu.classList.toggle('open');
+});
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navMenu.classList.remove('open');
+}
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+    closeMenu();
+  }
+});
+</script>
 </body>
-</html>
+</html
