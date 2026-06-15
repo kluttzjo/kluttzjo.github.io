@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<title>Founding Partners – AMP Productions</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#0d0d0d;
+  --charcoal:#1a1a1a;
+  --gold:#d4a017;
+  --gold-light:#f0c040;
+  --white:#f5f0e8;
+  --muted:#a89f8c;
+  --red:#e63b2e;
+  --orange:#f07020;
+  --yellow:#f0c040;
+  --green:#3db54a;
+  --blue:#1e6fbf;
+  --purple:#7b3fbf;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
+.nav-cta{background:var(--gold);color:var(--black);padding:8px 20px;border-radius:2px;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;flex-shrink:0;}
+.nav-cta:hover{background:var(--gold-light);}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-menu{position:fixed;top:64px;left:0;right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,23,0.25);padding:0;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.35s ease;z-index:97;}
+.nav-menu.open{max-height:500px;padding:1rem 0;}
+.nav-menu ul{list-style:none;display:flex;flex-direction:column;}
+.nav-menu ul li a{display:block;padding:0.9rem 2rem;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(212,160,23,0.08);transition:color 0.2s,background 0.2s;}
+.nav-menu ul li a:hover{color:var(--gold);background:rgba(212,160,23,0.05);}
+
+/* TICKER */
+.sponsor-ticker-wrap{background:linear-gradient(to right,#1a1000,#111,#1a1000);border-top:2px solid rgba(212,160,23,0.5);border-bottom:2px solid rgba(212,160,23,0.5);height:48px;overflow:hidden;position:fixed;top:64px;left:0;right:0;z-index:98;}
+.sponsor-ticker-inner{display:flex;align-items:center;height:100%;overflow:hidden;}
+.ticker-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.5rem;white-space:nowrap;border-right:2px solid rgba(212,160,23,0.4);flex-shrink:0;background:rgba(212,160,23,0.08);}
+.ticker-track-wrap{flex:1;overflow:hidden;position:relative;}
+.ticker-track{display:flex;align-items:center;animation:ticker-scroll 30s linear infinite;white-space:nowrap;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:#d4c9a8;padding:0 2.5rem;border-right:1px solid rgba(212,160,23,0.15);flex-shrink:0;}
+.ticker-item .tier-icon{color:var(--gold);margin-right:0.5rem;}
+@keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(max-width:760px){.ticker-track{animation-duration:6s;}.ticker-label{display:none;}}
+
+/* PAGE HERO */
+.page-hero{padding:12rem 2rem 6rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+
+/* BADGE ANIMATION */
+.founding-badge-hero{position:relative;display:inline-block;margin-bottom:2rem;}
+.badge-ring{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff8e0,#c8860a,#7a4e00);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 40px rgba(212,160,23,0.6),0 0 80px rgba(212,160,23,0.3),inset 0 2px 4px rgba(255,255,255,0.3);animation:badge-pulse 3s ease-in-out infinite;}
+@keyframes badge-pulse{0%,100%{box-shadow:0 0 40px rgba(212,160,23,0.6),0 0 80px rgba(212,160,23,0.3);}50%{box-shadow:0 0 60px rgba(212,160,23,0.9),0 0 120px rgba(212,160,23,0.5);}}
+.badge-inner{text-align:center;padding:0.5rem;}
+.badge-star{font-size:2rem;display:block;line-height:1;}
+.badge-text{font-family:'Bebas Neue',sans-serif;font-size:0.65rem;letter-spacing:2px;color:#fff8d0;display:block;margin-top:0.2rem;line-height:1.2;}
+
+.page-label{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h1.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:3px;color:var(--white);line-height:1;}
+.page-tagline{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;color:var(--muted);margin:1.2rem auto 0;max-width:640px;line-height:1.7;}
+.rainbow-rule{width:60px;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));margin:1.5rem auto;border-radius:2px;}
+
+/* INTRO */
+.intro-section{padding:5rem 2rem;background:var(--charcoal);text-align:center;}
+.intro-inner{max-width:780px;margin:0 auto;}
+.intro-inner p{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:#c9c0b0;line-height:1.85;margin-bottom:1rem;}
+.intro-inner .highlight{color:var(--gold);font-style:normal;font-weight:700;}
+
+/* PARTNER SPOTLIGHT CARDS */
+.spotlights-section{padding:5rem 2rem;background:var(--black);}
+.spotlights-inner{max-width:1000px;margin:0 auto;}
+.section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
+h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:2px;color:var(--white);line-height:1;margin-bottom:0;}
+
+.partner-card{border:1px solid rgba(212,160,23,0.35);margin-bottom:3rem;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(212,160,23,0.04),transparent);}
+.partner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
+
+/* FOUNDING PARTNER BADGE - inline version */
+.fp-badge{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#7a4e00,#c8860a,#fff8d0,#c8860a,#7a4e00);padding:5px 16px 5px 10px;border-radius:20px;position:absolute;top:1.2rem;right:1.2rem;box-shadow:0 2px 12px rgba(212,160,23,0.4);}
+.fp-badge-star{font-size:0.9rem;}
+.fp-badge-text{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#1a0d00;}
+
+.partner-card-body{display:grid;grid-template-columns:240px 1fr;gap:0;align-items:stretch;}
+.partner-logo-area{background:rgba(0,0,0,0.3);border-right:1px solid rgba(212,160,23,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:1rem;}
+.partner-logo-placeholder{width:160px;height:160px;border:1px dashed rgba(212,160,23,0.3);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;background:rgba(212,160,23,0.03);}
+.partner-logo-icon{font-size:3rem;opacity:0.2;}
+.partner-logo-text{font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;color:rgba(212,160,23,0.3);text-align:center;}
+.partner-tier-badge{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:4px 12px;border-radius:2px;text-align:center;}
+.symphony-badge{background:linear-gradient(to right,var(--purple),var(--blue));color:var(--white);}
+.legacy-badge{background:linear-gradient(to right,#8B6914,var(--gold));color:var(--black);}
+
+.partner-info{padding:2.5rem 2rem 2rem;}
+.partner-name{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:2px;color:var(--white);margin-bottom:0.3rem;padding-right:8rem;}
+.partner-tagline{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--gold);margin-bottom:1.5rem;}
+.partner-bio{font-size:0.9rem;color:#c9c0b0;line-height:1.8;}
+.partner-quote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:1.5rem 0;background:rgba(212,160,23,0.04);}
+.partner-quote p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:#d4c9a8;line-height:1.7;}
+.partner-quote cite{font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;display:block;}
+.partner-website{display:inline-block;margin-top:1rem;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(212,160,23,0.3);padding-bottom:2px;}
+
+/* PLACEHOLDER STATE */
+.placeholder-card{border:1px dashed rgba(212,160,23,0.2);padding:3rem 2rem;text-align:center;margin-bottom:3rem;}
+.placeholder-card-icon{font-size:3rem;opacity:0.15;margin-bottom:1rem;}
+.placeholder-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:rgba(212,160,23,0.3);margin-bottom:0.5rem;}
+.placeholder-card-text{font-size:0.85rem;color:rgba(255,255,255,0.2);font-style:italic;}
+.placeholder-card-cta{display:inline-block;margin-top:1.5rem;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:rgba(212,160,23,0.4);text-decoration:none;border-bottom:1px solid rgba(212,160,23,0.2);padding-bottom:2px;}
+
+/* CTA */
+.cta-section{padding:5rem 2rem;background:var(--charcoal);text-align:center;}
+.cta-inner{max-width:640px;margin:0 auto;}
+.cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:2px;color:var(--white);margin-bottom:1rem;}
+.cta-inner p{font-size:0.95rem;color:#c9c0b0;line-height:1.75;margin-bottom:2rem;}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{border:1px solid var(--gold);color:var(--gold);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;display:inline-block;margin-left:1rem;}
+.btn-outline:hover{background:rgba(212,160,23,0.1);}
+
+footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3rem 2rem;text-align:center;}
+.footer-eq{display:flex;gap:3px;align-items:flex-end;justify-content:center;height:20px;margin-bottom:1.5rem;}
+.footer-eq-bar{width:6px;border-radius:1px 1px 0 0;}
+.footer-eq-bar:nth-child(1){background:var(--red);height:10px;}
+.footer-eq-bar:nth-child(2){background:var(--orange);height:18px;}
+.footer-eq-bar:nth-child(3){background:var(--yellow);height:14px;}
+.footer-eq-bar:nth-child(4){background:var(--green);height:20px;}
+.footer-eq-bar:nth-child(5){background:var(--blue);height:12px;}
+.footer-eq-bar:nth-child(6){background:var(--purple);height:16px;}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--gold);margin-bottom:0.25rem;}
+.footer-tagline{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-legal{font-size:0.72rem;color:#4a4540;}
+
+@media(max-width:700px){
+  nav{padding:0 1.2rem;}
+  .partner-card-body{grid-template-columns:1fr;}
+  .partner-logo-area{border-right:none;border-bottom:1px solid rgba(212,160,23,0.15);padding:1.5rem;}
+  .partner-name{padding-right:0;}
+  .btn-outline{margin-left:0;margin-top:0.75rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="AMP_logo.png" alt="AMP Productions"/></a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="nav-cta" href="index.html#donate">Donate</a>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="index.html#events" onclick="closeMenu()">Events</a></li>
+    <li><a href="index.html#gallery" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+    <li><a href="sponsors.html" onclick="closeMenu()">Sponsors</a></li>
+    <li><a href="founding-partners.html" onclick="closeMenu()">Founding Partners</a></li>
+    <li><a href="board.html" onclick="closeMenu()">Board of Directors</a></li>
+    <li><a href="index.html#donate" onclick="closeMenu()">Donate</a></li>
+  </ul>
+</div>
+
+<!-- SPONSOR TICKER -->
+<div class="sponsor-ticker-wrap">
+  <div class="sponsor-ticker-inner">
+    <div class="ticker-label">⭐ Our Sponsors</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="tier-icon">🎼</span>Symphony Circle Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🏛️</span>Legacy Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">👏</span>Standing Ovation Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎻</span>Virtuoso Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎹</span>Maestro Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎵</span>Melody Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎶</span>Harmony Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🥁</span>Rhythm Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎼</span>Symphony Circle Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🏛️</span>Legacy Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">👏</span>Standing Ovation Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎻</span>Virtuoso Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎹</span>Maestro Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎵</span>Melody Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎶</span>Harmony Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🥁</span>Rhythm Sponsor Here</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="founding-badge-hero">
+    <div class="badge-ring">
+      <div class="badge-inner">
+        <span class="badge-star">🎵</span>
+        <span class="badge-text">Founding<br>Partner</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-label">Our Highest Honor</div>
+  <h1 class="page-title">Founding Partners</h1>
+  <div class="rainbow-rule"></div>
+  <p class="page-tagline">These extraordinary individuals and organizations have made the boldest commitment to A.M.P. Productions — helping lay the foundation for a legacy of music, philanthropy, and community for generations to come.</p>
+</div>
+
+<div class="intro-section">
+  <div class="intro-inner">
+    <p>Founding Partner status is reserved for our <span class="highlight">Symphony Circle</span> ($50,000+) and <span class="highlight">Legacy</span> ($25,000–$49,999) sponsors — those whose generosity doesn't just support an event, but helps <span class="highlight">shape the future</span> of A.M.P. Productions itself.</p>
+    <p>Their contributions fund not only world-class performances, but lasting opportunities for students, artists, and communities throughout the Willamette Valley.</p>
+  </div>
+</div>
+
+<div class="spotlights-section">
+  <div class="spotlights-inner">
+    <div class="section-label">Symphony Circle — $50,000+</div>
+    <h2 class="section-title">Symphony Circle Partners</h2>
+    <div class="rainbow-rule" style="margin:1rem 0 2rem;"></div>
+
+    <!-- SYMPHONY CIRCLE PLACEHOLDER -->
+    <div class="placeholder-card">
+      <div class="placeholder-card-icon">🎼</div>
+      <div class="placeholder-card-title">Your Organization Could Be Here</div>
+      <div class="placeholder-card-text">Symphony Circle partners receive the highest level of recognition A.M.P. Productions offers — premier logo placement, naming recognition for a concert series or program, a special commemorative plaque, and more. Your legacy begins here.</div>
+      <a href="sponsors.html" class="placeholder-card-cta">Learn About Symphony Circle Sponsorship →</a>
+    </div>
+
+    <div class="section-label" style="margin-top:3rem;">Legacy — $25,000–$49,999</div>
+    <h2 class="section-title">Legacy Partners</h2>
+    <div class="rainbow-rule" style="margin:1rem 0 2rem;"></div>
+
+    <!-- LEGACY PLACEHOLDER -->
+    <div class="placeholder-card">
+      <div class="placeholder-card-icon">🏛️</div>
+      <div class="placeholder-card-title">Your Organization Could Be Here</div>
+      <div class="placeholder-card-text">Legacy partners create a lasting impact on music, philanthropy, and community. Your name and story featured on this page, seen by every visitor who wants to know who made A.M.P. Productions possible.</div>
+      <a href="sponsors.html" class="placeholder-card-cta">Learn About Legacy Sponsorship →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>Become a Founding Partner</h2>
+    <p>Founding Partner status is a rare and meaningful opportunity to help shape the future of arts and philanthropy in our community. We'd love to talk with you about what this partnership could look like.</p>
+    <a class="btn-primary" href="index.html#contact">Contact Us</a>
+    <a class="btn-outline" href="sponsors.html">View All Tiers</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-eq">
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
+  </div>
+  <div class="footer-name">AMP Productions</div>
+  <div class="footer-tagline">Aid through Music and Philanthropy</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#events">Events</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="founding-partners.html">Founding Partners</a>
+    <a href="board.html">Board</a>
+    <a href="index.html#donate">Donate</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-legal">© 2026 AMP Productions · 501(c)(3) Nonprofit · aidthroughmusic.org · All rights reserved.</div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navMenu.classList.toggle('open');
+});
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navMenu.classList.remove('open');
+}
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) closeMenu();
+});
+</script>
+</body>
+</html>
