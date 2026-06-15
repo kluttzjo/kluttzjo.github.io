@@ -9,22 +9,11 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --black:#0d0d0d;
-  --charcoal:#1a1a1a;
-  --gold:#d4a017;
-  --gold-light:#f0c040;
-  --white:#f5f0e8;
-  --muted:#a89f8c;
-  --red:#e63b2e;
-  --orange:#f07020;
-  --yellow:#f0c040;
-  --green:#3db54a;
-  --blue:#1e6fbf;
-  --purple:#7b3fbf;
+  --black:#0d0d0d;--charcoal:#1a1a1a;--gold:#d4a017;--gold-light:#f0c040;--white:#f5f0e8;--muted:#a89f8c;
+  --red:#e63b2e;--orange:#f07020;--yellow:#f0c040;--green:#3db54a;--blue:#1e6fbf;--purple:#7b3fbf;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
-
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
 .nav-logo{text-decoration:none;display:flex;align-items:center;}
 .nav-logo img{height:44px;width:auto;}
@@ -40,94 +29,97 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-menu ul{list-style:none;display:flex;flex-direction:column;}
 .nav-menu ul li a{display:block;padding:0.9rem 2rem;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(212,160,23,0.08);transition:color 0.2s,background 0.2s;}
 .nav-menu ul li a:hover{color:var(--gold);background:rgba(212,160,23,0.05);}
-.nav-menu ul li:last-child a{border-bottom:none;}
-
-/* SPONSOR TICKER */
 .sponsor-ticker-wrap{background:linear-gradient(to right,#1a1000,#111,#1a1000);border-top:2px solid rgba(212,160,23,0.5);border-bottom:2px solid rgba(212,160,23,0.5);height:48px;overflow:hidden;position:fixed;top:64px;left:0;right:0;z-index:98;}
 .sponsor-ticker-inner{display:flex;align-items:center;height:100%;overflow:hidden;}
 .ticker-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;padding:0 1.5rem;white-space:nowrap;border-right:2px solid rgba(212,160,23,0.4);flex-shrink:0;background:rgba(212,160,23,0.08);}
-.ticker-track-wrap{flex:1;overflow:hidden;position:relative;}
+.ticker-track-wrap{flex:1;overflow:hidden;}
 .ticker-track{display:flex;align-items:center;animation:ticker-scroll 30s linear infinite;white-space:nowrap;}
 .ticker-track:hover{animation-play-state:paused;}
 .ticker-item{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:#d4c9a8;padding:0 2.5rem;border-right:1px solid rgba(212,160,23,0.15);flex-shrink:0;}
 .ticker-item .tier-icon{color:var(--gold);margin-right:0.5rem;}
 @keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 @media(max-width:760px){.ticker-track{animation-duration:6s;}.ticker-label{display:none;}}
-
-
-.page-hero{padding:10rem 2rem 5rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;}
+.page-hero{padding:12rem 2rem 5rem;text-align:center;background:radial-gradient(ellipse at 50% 60%, #1a1200 0%, #0d0d0d 70%);position:relative;}
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
 .page-label{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
 h1.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:3px;color:var(--white);line-height:1;}
 .page-tagline{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;color:var(--muted);margin:1.2rem auto 0;max-width:600px;line-height:1.7;}
-
 .rainbow-rule{width:60px;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));margin:1rem 0 2rem;border-radius:2px;}
-
 .intro-section{padding:5rem 2rem;background:var(--charcoal);}
 .intro-inner{max-width:800px;margin:0 auto;text-align:center;}
 .intro-inner p{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:#c9c0b0;line-height:1.85;}
-.intro-inner .highlight{color:var(--gold);font-style:normal;font-weight:600;}
-
 .tiers-section{padding:5rem 2rem;background:var(--black);}
 .tiers-inner{max-width:900px;margin:0 auto;}
 .section-label{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-weight:600;}
 h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:2px;color:var(--white);line-height:1;margin-bottom:0;}
 
+/* FOUNDING PARTNER BADGE */
+.fp-badge{display:inline-flex;align-items:center;gap:0.4rem;background:linear-gradient(135deg,#7a4e00,#c8860a,#fff8d0,#c8860a,#7a4e00);padding:4px 12px 4px 8px;border-radius:20px;box-shadow:0 2px 10px rgba(212,160,23,0.4);margin-left:0.75rem;vertical-align:middle;}
+.fp-badge-text{font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#1a0d00;}
+
 .tier-card{border:1px solid rgba(212,160,23,0.2);margin-bottom:1.5rem;position:relative;overflow:hidden;transition:border-color 0.2s;}
 .tier-card:hover{border-color:rgba(212,160,23,0.5);}
 .tier-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
-.tier-presenting::before{background:linear-gradient(to bottom,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
-.tier-gold::before{background:var(--gold);}
-.tier-silver::before{background:#c0c0c0;}
-.tier-bronze::before{background:#cd7f32;}
-.tier-community::before{background:var(--green);}
-
+.tier-symphony::before{background:linear-gradient(to bottom,var(--purple),var(--blue),var(--green));}
+.tier-legacy::before{background:linear-gradient(to bottom,#c8860a,var(--gold),#fff8d0);}
+.tier-ovation::before{background:var(--red);}
+.tier-virtuoso::before{background:var(--orange);}
+.tier-maestro::before{background:var(--yellow);}
+.tier-melody::before{background:var(--green);}
+.tier-harmony::before{background:var(--blue);}
+.tier-rhythm::before{background:var(--purple);}
 .tier-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem 1rem 2rem;gap:1rem;flex-wrap:wrap;}
 .tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;}
-.tier-presenting .tier-name{background:linear-gradient(to right,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.tier-gold .tier-name{color:var(--gold);}
-.tier-silver .tier-name{color:#c0c0c0;}
-.tier-bronze .tier-name{color:#cd7f32;}
-.tier-community .tier-name{color:var(--green);}
+.tier-symphony .tier-name{background:linear-gradient(to right,var(--purple),var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tier-legacy .tier-name{background:linear-gradient(to right,#c8860a,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tier-ovation .tier-name{color:var(--red);}
+.tier-virtuoso .tier-name{color:var(--orange);}
+.tier-maestro .tier-name{color:var(--yellow);}
+.tier-melody .tier-name{color:var(--green);}
+.tier-harmony .tier-name{color:var(--blue);}
+.tier-rhythm .tier-name{color:var(--purple);}
 .tier-amount{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);background:rgba(255,255,255,0.05);padding:6px 16px;border-radius:2px;white-space:nowrap;}
 .tier-body{padding:0 1.5rem 1.5rem 2rem;}
-.tier-body p{font-size:0.9rem;color:#c9c0b0;line-height:1.75;margin-bottom:0.75rem;}
-.tier-recognition{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:var(--muted);}
-.tier-recognition::before{content:'★';color:var(--gold);flex-shrink:0;margin-top:1px;}
+.tier-body p{font-size:0.9rem;color:#c9c0b0;line-height:1.75;margin-bottom:0.75rem;font-style:italic;}
+.tier-benefits{list-style:none;margin-top:0.5rem;}
+.tier-benefits li{font-size:0.85rem;color:var(--muted);line-height:1.6;padding:0.3rem 0;display:flex;align-items:flex-start;gap:0.6rem;}
+.tier-benefits li::before{content:'♪';color:var(--gold);flex-shrink:0;font-size:0.7rem;margin-top:3px;}
+.tier-benefits li.inherited{color:rgba(168,159,140,0.5);}
+.tier-benefits li.inherited::before{color:rgba(212,160,23,0.3);}
+.founding-link{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(212,160,23,0.3);padding-bottom:2px;}
 
-.recognition-section{padding:5rem 2rem;background:var(--black);}
+/* RECOGNITION WALL */
+.recognition-section{padding:5rem 2rem;background:var(--charcoal);}
 .recog-tier{margin-bottom:3rem;}
 .recog-tier-label{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(212,160,23,0.15);}
-.recog-tier-label.presenting{background:linear-gradient(to right,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.recog-tier-label.gold{color:var(--gold);}
-.recog-tier-label.silver{color:#c0c0c0;}
-.recog-tier-label.bronze{color:#cd7f32;}
-.recog-tier-label.community{color:var(--green);}
+.recog-tier-label.symphony{background:linear-gradient(to right,var(--purple),var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.recog-tier-label.legacy{background:linear-gradient(to right,#c8860a,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.recog-tier-label.ovation{color:var(--red);}
+.recog-tier-label.virtuoso{color:var(--orange);}
+.recog-tier-label.maestro{color:var(--yellow);}
+.recog-tier-label.melody{color:var(--green);}
+.recog-tier-label.harmony{color:var(--blue);}
+.recog-tier-label.rhythm{color:var(--purple);}
 .recog-grid{display:grid;gap:1rem;}
-.recog-grid-presenting{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.recog-grid-gold{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-.recog-grid-silver{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-.recog-grid-bronze{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
-.recog-grid-community{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
-.recog-slot{border:1px dashed rgba(212,160,23,0.2);transition:border-color 0.2s;}
-.recog-slot:hover{border-color:rgba(212,160,23,0.5);}
-.recog-slot-inner{padding:1.2rem;text-align:center;}
-.recog-slot-presenting .recog-slot-inner{padding:2rem;}
+.recog-grid-lg{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.recog-grid-md{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.recog-grid-sm{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}
+.recog-grid-xs{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));}
+.recog-slot{border:1px dashed rgba(212,160,23,0.2);padding:1.2rem;text-align:center;transition:border-color 0.2s;}
+.recog-slot:hover{border-color:rgba(212,160,23,0.4);}
+.recog-slot-lg{padding:2rem;}
 .recog-your-name{color:rgba(212,160,23,0.3);font-style:italic;font-size:0.85rem;}
-.recog-slot-presenting .recog-your-name{font-size:1.1rem;}
-.recog-slot-gold .recog-your-name{font-size:1rem;}
-.recog-slot-sub{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-top:0.4rem;}
+.recog-slot-lg .recog-your-name{font-size:1rem;}
+.recog-slot-sub{font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.12);margin-top:0.3rem;}
 
-.cta-section{padding:5rem 2rem;background:var(--charcoal);text-align:center;}
+.cta-section{padding:5rem 2rem;background:var(--black);text-align:center;}
 .cta-inner{max-width:640px;margin:0 auto;}
 .cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:2px;color:var(--white);margin-bottom:1rem;}
 .cta-inner p{font-size:0.95rem;color:#c9c0b0;line-height:1.75;margin-bottom:2rem;}
-.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;border-radius:2px;transition:background 0.2s;display:inline-block;}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s;display:inline-block;}
 .btn-primary:hover{background:var(--gold-light);}
 .btn-outline{border:1px solid var(--gold);color:var(--gold);padding:14px 32px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;display:inline-block;margin-left:1rem;}
 .btn-outline:hover{background:rgba(212,160,23,0.1);}
-.disclaimer{margin-top:2rem;font-size:0.78rem;color:var(--muted);line-height:1.6;}
-
 footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3rem 2rem;text-align:center;}
 .footer-eq{display:flex;gap:3px;align-items:flex-end;justify-content:center;height:20px;margin-bottom:1.5rem;}
 .footer-eq-bar{width:6px;border-radius:1px 1px 0 0;}
@@ -143,17 +135,10 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 .footer-links a{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 .footer-legal{font-size:0.72rem;color:#4a4540;}
-
-@media(max-width:600px){
-  nav{padding:0 1.2rem;}
-  .nav-links{display:none;}
-  .tier-header{flex-direction:column;align-items:flex-start;}
-  .btn-outline{margin-left:0;margin-top:0.75rem;}
-}
+@media(max-width:600px){nav{padding:0 1.2rem;}.tier-header{flex-direction:column;align-items:flex-start;}.btn-outline{margin-left:0;margin-top:0.75rem;}}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html"><img src="AMP_logo.png" alt="AMP Productions"/></a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -168,50 +153,49 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <li><a href="index.html#events" onclick="closeMenu()">Events</a></li>
     <li><a href="index.html#gallery" onclick="closeMenu()">Gallery</a></li>
     <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
-    <li><a href="#our-sponsors" onclick="closeMenu()">Our Sponsors</a></li>
+    <li><a href="sponsors.html" onclick="closeMenu()">Sponsors</a></li>
+    <li><a href="founding-partners.html" onclick="closeMenu()">Founding Partners</a></li>
     <li><a href="board.html" onclick="closeMenu()">Board of Directors</a></li>
     <li><a href="index.html#donate" onclick="closeMenu()">Donate</a></li>
   </ul>
 </div>
 
-
-<!-- SPONSOR TICKER -->
 <div class="sponsor-ticker-wrap">
   <div class="sponsor-ticker-inner">
     <div class="ticker-label">⭐ Our Sponsors</div>
     <div class="ticker-track-wrap">
       <div class="ticker-track">
-        <div class="ticker-item"><span class="tier-icon">🏆</span>Your Presenting Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Community Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">🏆</span>Your Presenting Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">⭐</span>Your Gold Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">✦</span>Your Silver Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Bronze Sponsor Here</div>
-        <div class="ticker-item"><span class="tier-icon">·</span>Your Community Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎼</span>Symphony Circle Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🏛️</span>Legacy Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">👏</span>Standing Ovation Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎻</span>Virtuoso Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎹</span>Maestro Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎵</span>Melody Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎶</span>Harmony Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🥁</span>Rhythm Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎼</span>Symphony Circle Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🏛️</span>Legacy Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">👏</span>Standing Ovation Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎻</span>Virtuoso Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎹</span>Maestro Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎵</span>Melody Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🎶</span>Harmony Sponsor Here</div>
+        <div class="ticker-item"><span class="tier-icon">🥁</span>Rhythm Sponsor Here</div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="page-hero">
-  <div class="page-label">Partnership &amp; Giving</div>
+  <div class="page-label">Partnership & Giving</div>
   <h1 class="page-title">Sponsorship Opportunities</h1>
-  <p class="page-tagline">Join us in amplifying the impact of music on our community. Your sponsorship directly supports creative arts programs at Lebanon High School.</p>
+  <p class="page-tagline">Join us in amplifying the impact of music on our community. Your sponsorship directly supports creative arts programs at Lebanon High School and beyond.</p>
 </div>
 
 <div class="intro-section">
   <div class="intro-inner">
     <div class="rainbow-rule" style="margin:0 auto 2rem;"></div>
-    <p>Sponsor contributions support the operation of <span class="highlight">A.M.P. Productions</span>. Net proceeds from events directly benefit <span class="highlight">creative arts programs at Lebanon High School</span>. Every dollar invested in our mission is a dollar invested in the next generation of artists, musicians, and performers.</p>
+    <p>Sponsor contributions support the operation of A.M.P. Productions. Net proceeds from events directly benefit creative arts programs at Lebanon High School. Every dollar invested in our mission is a dollar invested in the next generation of artists, musicians, and performers.</p>
   </div>
 </div>
 
@@ -221,64 +205,176 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <h2 class="section-title">Sponsor Tiers</h2>
     <div class="rainbow-rule"></div>
 
-    <div class="tier-card tier-presenting">
+    <!-- SYMPHONY CIRCLE -->
+    <div class="tier-card tier-symphony">
       <div class="tier-header">
-        <div class="tier-name">🏆 Presenting Sponsor</div>
-        <div class="tier-amount">$5,000+</div>
+        <div class="tier-name">🎼 Symphony Circle <span class="fp-badge"><span>🎵</span><span class="fp-badge-text">Founding Partner</span></span></div>
+        <div class="tier-amount">$50,000+</div>
       </div>
       <div class="tier-body">
-        <p>Presenting Sponsors provide critical operational support that allows A.M.P. Productions to plan, produce, and sustain high-quality musical events benefiting creative arts programs at Lebanon High School.</p>
-        <div class="tier-recognition">Prominent logo placement on all event materials, verbal recognition at every event, featured website placement, and primary sponsor acknowledgment in all communications.</div>
+        <p>The highest level of sponsorship, helping shape the future of A.M.P. Productions.</p>
+        <ul class="tier-benefits">
+          <li>Premier logo placement on all major event materials</li>
+          <li>Special commemorative plaque</li>
+          <li>Naming recognition for a concert series, scholarship, outreach program, or annual event (subject to board approval)</li>
+          <li>Private performance or musical presentation for a special event, if feasible</li>
+          <li>Recognition from the stage at every production during the sponsorship year</li>
+          <li>Full-page program acknowledgment</li>
+          <li>Opportunity to sponsor a specific performance, musical number, or community outreach project</li>
+          <li>Reserved VIP seating & invitation to sponsor reception or cast meet-and-greet</li>
+          <li>Logo on promotional materials (when deadlines permit)</li>
+          <li>Featured sponsor spotlight on social media</li>
+          <li>Verbal recognition during performances</li>
+          <li>Logo in concert programs & on website with link</li>
+          <li>Complimentary VIP tickets</li>
+        </ul>
+        <a href="founding-partners.html" class="founding-link">🎵 View Founding Partner Spotlight Page →</a>
       </div>
     </div>
 
-    <div class="tier-card tier-gold">
+    <!-- LEGACY -->
+    <div class="tier-card tier-legacy">
       <div class="tier-header">
-        <div class="tier-name">Gold Sponsor</div>
-        <div class="tier-amount">$2,500 – $4,999</div>
+        <div class="tier-name">🏛️ Legacy <span class="fp-badge"><span>🎵</span><span class="fp-badge-text">Founding Partner</span></span></div>
+        <div class="tier-amount">$25,000–$49,999</div>
       </div>
       <div class="tier-body">
-        <p>Gold Sponsors help cover essential production and operational costs, ensuring events are professionally executed and able to generate proceeds for Lebanon High School's creative arts programs.</p>
-        <div class="tier-recognition">Logo placement on select event materials, recognition at events, and featured website listing.</div>
+        <p>Creating a lasting impact on music, philanthropy, and community.</p>
+        <ul class="tier-benefits">
+          <li>Recognition from the stage at every production during the sponsorship year</li>
+          <li>Full-page program acknowledgment</li>
+          <li>Opportunity to sponsor a specific performance, musical number, or community outreach project</li>
+          <li>Reserved VIP seating & invitation to sponsor reception or cast meet-and-greet</li>
+          <li>Logo on promotional materials (when deadlines permit)</li>
+          <li>Featured sponsor spotlight on social media</li>
+          <li>Verbal recognition during performances</li>
+          <li>Logo in concert programs & on website with link</li>
+          <li>Complimentary VIP tickets</li>
+        </ul>
+        <a href="founding-partners.html" class="founding-link">🎵 View Founding Partner Spotlight Page →</a>
       </div>
     </div>
 
-    <div class="tier-card tier-silver">
+    <!-- STANDING OVATION -->
+    <div class="tier-card tier-ovation">
       <div class="tier-header">
-        <div class="tier-name">Silver Sponsor</div>
-        <div class="tier-amount">$1,000 – $2,499</div>
+        <div class="tier-name">👏 Standing Ovation</div>
+        <div class="tier-amount">$10,000–$24,999</div>
       </div>
       <div class="tier-body">
-        <p>Silver Sponsors support behind-the-scenes production needs that make each event possible and memorable for our community.</p>
-        <div class="tier-recognition">Name listing on event materials and website acknowledgment.</div>
+        <p>A major supporter whose generosity helps transform lives through music.</p>
+        <ul class="tier-benefits">
+          <li>Recognition from the stage at every production during the sponsorship year</li>
+          <li>Full-page program acknowledgment</li>
+          <li>Opportunity to sponsor a specific performance, musical number, or community outreach project</li>
+          <li class="inherited">Reserved VIP seating & invitation to sponsor reception</li>
+          <li class="inherited">Logo on promotional materials (when deadlines permit)</li>
+          <li class="inherited">Featured sponsor spotlight on social media</li>
+          <li class="inherited">Verbal recognition during performances</li>
+          <li class="inherited">Logo in concert programs & on website with link</li>
+        </ul>
       </div>
     </div>
 
-    <div class="tier-card tier-bronze">
+    <!-- VIRTUOSO -->
+    <div class="tier-card tier-virtuoso">
       <div class="tier-header">
-        <div class="tier-name">Bronze Sponsor</div>
-        <div class="tier-amount">$500 – $999</div>
+        <div class="tier-name">🎻 Virtuoso</div>
+        <div class="tier-amount">$5,000–$9,999</div>
       </div>
       <div class="tier-body">
-        <p>Bronze Sponsors provide meaningful support toward operational and production expenses that keep our events running smoothly.</p>
-        <div class="tier-recognition">Name listing in event programs or materials.</div>
+        <p>Making exceptional community music experiences possible.</p>
+        <ul class="tier-benefits">
+          <li>Logo on promotional materials (when deadlines permit)</li>
+          <li>Reserved VIP seating</li>
+          <li>Invitation to a sponsor reception or cast meet-and-greet</li>
+          <li class="inherited">Featured sponsor spotlight on social media</li>
+          <li class="inherited">Verbal recognition during performances</li>
+          <li class="inherited">Logo in concert programs & on website with link</li>
+          <li class="inherited">Four complimentary VIP tickets</li>
+        </ul>
       </div>
     </div>
 
-    <div class="tier-card tier-community">
+    <!-- MAESTRO -->
+    <div class="tier-card tier-maestro">
       <div class="tier-header">
-        <div class="tier-name">Community Sponsor</div>
-        <div class="tier-amount">Up to $499</div>
+        <div class="tier-name">🎹 Maestro</div>
+        <div class="tier-amount">$2,500–$4,999</div>
       </div>
       <div class="tier-body">
-        <p>Community Sponsors demonstrate grassroots support for creative arts and community impact. Every contribution, no matter the size, makes a difference.</p>
-        <div class="tier-recognition">Name listing on the website or event program.</div>
+        <p>Providing leadership-level support for productions and outreach.</p>
+        <ul class="tier-benefits">
+          <li>Verbal recognition during performances</li>
+          <li>Featured sponsor spotlight on social media</li>
+          <li>Four complimentary VIP tickets</li>
+          <li class="inherited">Logo in concert programs & on website with link</li>
+          <li class="inherited">Two complimentary concert tickets</li>
+          <li class="inherited">Social media recognition</li>
+          <li class="inherited">Name on event sponsor signage</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MELODY -->
+    <div class="tier-card tier-melody">
+      <div class="tier-header">
+        <div class="tier-name">🎵 Melody</div>
+        <div class="tier-amount">$1,000–$2,499</div>
+      </div>
+      <div class="tier-body">
+        <p>Helping create memorable performances and charitable impact.</p>
+        <ul class="tier-benefits">
+          <li>Logo in concert programs</li>
+          <li>Logo on website with link</li>
+          <li>Two complimentary concert tickets</li>
+          <li class="inherited">Social media recognition</li>
+          <li class="inherited">Name included on event sponsor signage</li>
+          <li class="inherited">Priority notification of upcoming events</li>
+          <li class="inherited">Name listed in concert program</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HARMONY -->
+    <div class="tier-card tier-harmony">
+      <div class="tier-header">
+        <div class="tier-name">🎶 Harmony</div>
+        <div class="tier-amount">$500–$999</div>
+      </div>
+      <div class="tier-body">
+        <p>Supporting the voices and instruments that bring the community together.</p>
+        <ul class="tier-benefits">
+          <li>Social media recognition</li>
+          <li>Name included on event sponsor signage</li>
+          <li>Priority notification of upcoming events</li>
+          <li class="inherited">Name listed in concert program</li>
+          <li class="inherited">Recognition on website donor page</li>
+          <li class="inherited">Thank-you certificate</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RHYTHM -->
+    <div class="tier-card tier-rhythm">
+      <div class="tier-header">
+        <div class="tier-name">🥁 Rhythm</div>
+        <div class="tier-amount">$100–$499</div>
+      </div>
+      <div class="tier-body">
+        <p>Keeping the beat and helping the music move forward.</p>
+        <ul class="tier-benefits">
+          <li>Name listed in concert program</li>
+          <li>Recognition on website donor page</li>
+          <li>Thank-you certificate</li>
+        </ul>
       </div>
     </div>
 
   </div>
 </div>
 
+<!-- RECOGNITION WALL -->
 <div class="recognition-section" id="our-sponsors">
   <div class="tiers-inner">
     <div class="section-label">Thank You</div>
@@ -286,71 +382,21 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <div class="rainbow-rule"></div>
     <p style="color:#c9c0b0;font-size:0.95rem;line-height:1.75;margin-bottom:3rem;">We are grateful for the generous support of our sponsors. Their contributions make it possible for A.M.P. Productions to bring exceptional music and community events to Lebanon and the Willamette Valley.</p>
 
-    <!-- PRESENTING -->
-    <div class="recog-tier">
-      <div class="recog-tier-label presenting">🏆 Presenting Sponsors</div>
-      <div class="recog-grid recog-grid-presenting">
-        <div class="recog-slot recog-slot-presenting">
-          <div class="recog-slot-inner">
-            <div class="recog-your-name">Your Name or Logo Here</div>
-            <div class="recog-slot-sub">Presenting Sponsor</div>
-          </div>
-        </div>
-        <div class="recog-slot recog-slot-presenting">
-          <div class="recog-slot-inner">
-            <div class="recog-your-name">Your Name or Logo Here</div>
-            <div class="recog-slot-sub">Presenting Sponsor</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="recog-tier"><div class="recog-tier-label symphony">🎼 Symphony Circle</div><div class="recog-grid recog-grid-lg"><div class="recog-slot recog-slot-lg"><div class="recog-your-name">Your Name or Logo Here</div><div class="recog-slot-sub">Symphony Circle — $50,000+</div></div><div class="recog-slot recog-slot-lg"><div class="recog-your-name">Your Name or Logo Here</div><div class="recog-slot-sub">Symphony Circle — $50,000+</div></div></div></div>
 
-    <!-- GOLD -->
-    <div class="recog-tier">
-      <div class="recog-tier-label gold">Gold Sponsors</div>
-      <div class="recog-grid recog-grid-gold">
-        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-gold"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Gold Sponsor</div></div></div>
-      </div>
-    </div>
+    <div class="recog-tier"><div class="recog-tier-label legacy">🏛️ Legacy</div><div class="recog-grid recog-grid-lg"><div class="recog-slot recog-slot-lg"><div class="recog-your-name">Your Name or Logo Here</div><div class="recog-slot-sub">Legacy — $25,000+</div></div><div class="recog-slot recog-slot-lg"><div class="recog-your-name">Your Name or Logo Here</div><div class="recog-slot-sub">Legacy — $25,000+</div></div></div></div>
 
-    <!-- SILVER -->
-    <div class="recog-tier">
-      <div class="recog-tier-label silver">Silver Sponsors</div>
-      <div class="recog-grid recog-grid-silver">
-        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-silver"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Silver Sponsor</div></div></div>
-      </div>
-    </div>
+    <div class="recog-tier"><div class="recog-tier-label ovation">👏 Standing Ovation</div><div class="recog-grid recog-grid-md"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Standing Ovation</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Standing Ovation</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Standing Ovation</div></div></div></div>
 
-    <!-- BRONZE -->
-    <div class="recog-tier">
-      <div class="recog-tier-label bronze">Bronze Sponsors</div>
-      <div class="recog-grid recog-grid-bronze">
-        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
-        <div class="recog-slot recog-slot-bronze"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Bronze Sponsor</div></div></div>
-      </div>
-    </div>
+    <div class="recog-tier"><div class="recog-tier-label virtuoso">🎻 Virtuoso</div><div class="recog-grid recog-grid-md"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Virtuoso</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Virtuoso</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Virtuoso</div></div></div></div>
 
-    <!-- COMMUNITY -->
-    <div class="recog-tier">
-      <div class="recog-tier-label community">Community Sponsors</div>
-      <div class="recog-grid recog-grid-community">
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-        <div class="recog-slot recog-slot-community"><div class="recog-slot-inner"><div class="recog-your-name">Your Name Here</div></div></div>
-      </div>
-    </div>
+    <div class="recog-tier"><div class="recog-tier-label maestro">🎹 Maestro</div><div class="recog-grid recog-grid-sm"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Maestro</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Maestro</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Maestro</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div><div class="recog-slot-sub">Maestro</div></div></div></div>
 
+    <div class="recog-tier"><div class="recog-tier-label melody">🎵 Melody</div><div class="recog-grid recog-grid-sm"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div></div></div>
+
+    <div class="recog-tier"><div class="recog-tier-label harmony">🎶 Harmony</div><div class="recog-grid recog-grid-xs"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div></div></div>
+
+    <div class="recog-tier"><div class="recog-tier-label rhythm">🥁 Rhythm</div><div class="recog-grid recog-grid-xs"><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div><div class="recog-slot"><div class="recog-your-name">Your Name Here</div></div></div></div>
   </div>
 </div>
 
@@ -360,29 +406,25 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
     <p>We'd love to connect with you about sponsorship opportunities. Reach out to us directly to discuss how your contribution can make a difference for Lebanon High School's creative arts programs.</p>
     <a class="btn-primary" href="index.html#contact">Contact Us to Sponsor</a>
     <a class="btn-outline" href="index.html#donate">Make a Donation Instead</a>
-    <p class="disclaimer">AMP Productions is a registered 501(c)(3) nonprofit organization. Sponsor contributions may be tax-deductible to the extent allowed by law. Please consult your tax advisor for details.</p>
   </div>
 </div>
 
 <footer>
-  <div class="footer-eq">
-    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
-    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
-    <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
-  </div>
+  <div class="footer-eq"><div class="footer-eq-bar"></div><div class="footer-eq-bar"></div><div class="footer-eq-bar"></div><div class="footer-eq-bar"></div><div class="footer-eq-bar"></div><div class="footer-eq-bar"></div></div>
   <div class="footer-name">AMP Productions</div>
   <div class="footer-tagline">Aid through Music and Philanthropy</div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="index.html#about">About</a>
     <a href="index.html#events">Events</a>
-    <a href="index.html#donate">Donate</a>
     <a href="sponsors.html">Sponsors</a>
+    <a href="founding-partners.html">Founding Partners</a>
+    <a href="board.html">Board</a>
+    <a href="index.html#donate">Donate</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <div class="footer-legal">© 2026 AMP Productions · 501(c)(3) Nonprofit · aidthroughmusic.org · All rights reserved.</div>
 </footer>
-
 
 <script>
 const hamburger = document.getElementById('hamburger');
@@ -396,9 +438,7 @@ function closeMenu() {
   navMenu.classList.remove('open');
 }
 document.addEventListener('click', (e) => {
-  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    closeMenu();
-  }
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) closeMenu();
 });
 </script>
 </body>
