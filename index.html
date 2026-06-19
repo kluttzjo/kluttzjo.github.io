@@ -129,6 +129,16 @@ h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,
 .tag-upcoming{color:var(--green);border-color:var(--green);}
 .tag-benefit{color:var(--gold);border-color:var(--gold);}
 
+
+/* VISITOR COUNTER */
+.counter-section{background:#0a0a0a;border-top:1px solid rgba(212,160,23,0.15);border-bottom:1px solid rgba(212,160,23,0.15);padding:1.5rem 2rem;text-align:center;}
+.counter-inner{display:inline-flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.counter-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.counter-display{display:flex;align-items:center;gap:0.5rem;}
+.counter-digit-wrap{display:flex;gap:4px;}
+.counter-digit{background:#1a1a1a;border:1px solid rgba(212,160,23,0.3);color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:2rem;width:36px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,0.4),inset 0 1px 0 rgba(212,160,23,0.1);}
+.counter-separator{color:rgba(212,160,23,0.3);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;}
+.counter-since{font-size:0.65rem;letter-spacing:1px;color:rgba(168,159,140,0.5);text-transform:uppercase;}
 /* SPONSOR SHOWCASE */
 .showcase-presenting{display:grid;grid-template-columns:280px 1fr;gap:2.5rem;align-items:center;border:1px solid rgba(212,160,23,0.3);padding:2rem;position:relative;background:linear-gradient(135deg,rgba(212,160,23,0.04),transparent);}
 .showcase-presenting::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));}
@@ -492,6 +502,25 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
   </div>
 </section>
 
+<!-- VISITOR COUNTER -->
+<div class="counter-section">
+  <div class="counter-inner">
+    <div class="counter-label">🎵 Site Visitors</div>
+    <div class="counter-display">
+      <div class="counter-digit-wrap" id="counterDigits">
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+      </div>
+    </div>
+    <div class="counter-separator">·</div>
+    <div class="counter-since">Since 2026</div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-eq">
     <div class="footer-eq-bar"></div><div class="footer-eq-bar"></div>
@@ -530,6 +559,21 @@ document.addEventListener('click', (e) => {
     closeMenu();
   }
 });
+
+// VISITOR COUNTER using CountAPI
+async function updateCounter() {
+  try {
+    const res = await fetch('https://api.countapi.xyz/hit/aidthroughmusic.org/visits');
+    const data = await res.json();
+    const count = String(data.value).padStart(6, '0');
+    const digits = document.querySelectorAll('#counterDigits .counter-digit');
+    digits.forEach((d, i) => { d.textContent = count[i] || '0'; });
+  } catch(e) {
+    console.log('Counter unavailable');
+  }
+}
+updateCounter();
+
 </script>
 </body>
 </html>
