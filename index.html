@@ -130,6 +130,16 @@ h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,
 .tag-benefit{color:var(--gold);border-color:var(--gold);}
 
 
+.contact-links-grid{display:flex;flex-direction:column;gap:0.75rem;}
+.contact-link-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border:1px solid rgba(212,160,23,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;color:inherit;}
+.contact-link-card:hover{border-color:rgba(212,160,23,0.6);background:rgba(212,160,23,0.04);}
+.contact-link-icon{font-size:1.4rem;flex-shrink:0;}
+.contact-link-info{flex:1;}
+.contact-link-label{font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:0.15rem;}
+.contact-link-email{font-size:0.82rem;color:var(--gold);}
+.contact-link-desc{font-size:0.72rem;color:var(--muted);margin-top:0.15rem;}
+.contact-link-arrow{color:rgba(212,160,23,0.4);font-size:1.1rem;flex-shrink:0;}
+.contact-link-card:hover .contact-link-arrow{color:var(--gold);}
 /* VISITOR COUNTER */
 .counter-section{background:#0a0a0a;border-top:1px solid rgba(212,160,23,0.15);border-bottom:1px solid rgba(212,160,23,0.15);padding:1.5rem 2rem;text-align:center;}
 .counter-inner{display:inline-flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
