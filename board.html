@@ -95,6 +95,17 @@ h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.
 .bio-photo-title{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:0.2rem;font-weight:600;line-height:1.4;}
 .bio-content p{font-size:0.95rem;line-height:1.9;color:#c9c0b0;margin-bottom:1.2rem;}
 .bio-content p:last-child{margin-bottom:0;}
+
+.bio-form-wrap{margin-top:1.5rem;border-top:1px solid rgba(212,160,23,0.15);padding-top:1.5rem;}
+.bio-form-title{font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;}
+.bio-mini-form{display:flex;flex-direction:column;gap:0.75rem;}
+.bio-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.bio-mini-form input,.bio-mini-form textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(212,160,23,0.2);color:var(--white);padding:9px 12px;font-family:'Montserrat',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s;border-radius:2px;width:100%;}
+.bio-mini-form input:focus,.bio-mini-form textarea:focus{border-color:rgba(212,160,23,0.6);}
+.bio-mini-form textarea{min-height:90px;resize:vertical;}
+.bio-mini-form button{background:var(--gold);color:var(--black);padding:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:background 0.2s;}
+.bio-mini-form button:hover{background:var(--gold-light);}
+@media(max-width:600px){.bio-form-row{grid-template-columns:1fr;}}
 .bio-contact{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.2rem;padding:0.6rem 1.2rem;border:1px solid rgba(212,160,23,0.3);text-decoration:none;color:var(--gold);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;}
 .bio-contact:hover{background:rgba(212,160,23,0.08);border-color:var(--gold);}
 .bio-placeholder{font-family:'Lora',serif;font-style:italic;color:rgba(212,160,23,0.3);font-size:0.95rem;line-height:1.9;border:1px dashed rgba(212,160,23,0.2);padding:2rem;text-align:center;}
@@ -253,7 +264,20 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
         <p>Throughout the years, John has remained active in the local arts community, performing with the Lebanon Community Chorus, appearing in numerous LAFTA productions, serving as a music director for theatrical productions, and directing the Sweet Home Community Singing Christmas Tree for six years.</p>
         <p>Inspired by the power of music and community, John co-founded A.M.P. Productions with Dana Foxx to create exceptional events that inspire audiences, bring people together, and support arts education for future generations. He believes the arts have the power to change lives, build lasting traditions, and unite communities.</p>
         <p>John's greatest joy is his family. He and his wife are the proud parents of twelve children and grandparents to a growing family, whose future inspires his commitment to building a stronger community through the arts.</p>
-        <a href="mailto:j.kluttz@aidthroughmusic.org" class="bio-contact">✉ Contact John →</a>
+        <div class="bio-form-wrap">
+          <div class="bio-form-title">✉ Send John a Message</div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="bio-mini-form">
+            <input type="hidden" name="access_key" value="7958cfbb-6382-4795-9dd4-3d96b15c46f8"/>
+            <input type="hidden" name="subject" value="Message for John Kluttz - AMP Productions"/>
+            <input type="hidden" name="redirect" value="https://aidthroughmusic.org/board.html"/>
+            <div class="bio-form-row">
+              <input type="text" name="name" placeholder="Your Name" required/>
+              <input type="email" name="email" placeholder="Your Email" required/>
+            </div>
+            <textarea name="message" placeholder="Your message to John..." required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -268,7 +292,20 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       </div>
       <div class="bio-content">
         <div class="bio-placeholder">Bio coming soon. We look forward to sharing Dana's story and her passion for music and community with you.</div>
-        <a href="mailto:d.foxx@aidthroughmusic.org" class="bio-contact">✉ Contact Dana →</a>
+        <div class="bio-form-wrap">
+          <div class="bio-form-title">✉ Send Dana a Message</div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="bio-mini-form">
+            <input type="hidden" name="access_key" value="13e8e67a-1f71-4e6e-b781-580b3a1e49af"/>
+            <input type="hidden" name="subject" value="Message for Dana Foxx - AMP Productions"/>
+            <input type="hidden" name="redirect" value="https://aidthroughmusic.org/board.html"/>
+            <div class="bio-form-row">
+              <input type="text" name="name" placeholder="Your Name" required/>
+              <input type="email" name="email" placeholder="Your Email" required/>
+            </div>
+            <textarea name="message" placeholder="Your message to Dana..." required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -283,7 +320,20 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       </div>
       <div class="bio-content">
         <div class="bio-placeholder">Bio coming soon. We look forward to sharing Hannah's story and her contributions to A.M.P. Productions.</div>
-        <a href="mailto:h.leeper@aidthroughmusic.org" class="bio-contact">✉ Contact Hannah →</a>
+        <div class="bio-form-wrap">
+          <div class="bio-form-title">✉ Send Hannah a Message</div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="bio-mini-form">
+            <input type="hidden" name="access_key" value="e7abe13a-83f3-4078-a6b4-65aa36610d6f"/>
+            <input type="hidden" name="subject" value="Message for Hannah Leeper - AMP Productions"/>
+            <input type="hidden" name="redirect" value="https://aidthroughmusic.org/board.html"/>
+            <div class="bio-form-row">
+              <input type="text" name="name" placeholder="Your Name" required/>
+              <input type="email" name="email" placeholder="Your Email" required/>
+            </div>
+            <textarea name="message" placeholder="Your message to Hannah..." required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -298,7 +348,20 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
       </div>
       <div class="bio-content">
         <div class="bio-placeholder">Bio coming soon. We look forward to sharing Patty's story and the expertise she brings to A.M.P. Productions.</div>
-        <a href="mailto:p.oday@aidthroughmusic.org" class="bio-contact">✉ Contact Patty →</a>
+        <div class="bio-form-wrap">
+          <div class="bio-form-title">✉ Send Patty a Message</div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="bio-mini-form">
+            <input type="hidden" name="access_key" value="27636af9-7c24-4401-abfe-e4e3d6ebbd8e"/>
+            <input type="hidden" name="subject" value="Message for Patty O'Day - AMP Productions"/>
+            <input type="hidden" name="redirect" value="https://aidthroughmusic.org/board.html"/>
+            <div class="bio-form-row">
+              <input type="text" name="name" placeholder="Your Name" required/>
+              <input type="email" name="email" placeholder="Your Email" required/>
+            </div>
+            <textarea name="message" placeholder="Your message to Patty..." required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -343,5 +406,6 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
