@@ -516,7 +516,16 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
 <div class="counter-section">
   <div class="counter-inner">
     <div class="counter-label">🎵 Site Visitors</div>
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Faidthroughmusic.org&count_bg=%23d4a017&title_bg=%231a1a1a&icon=headphones.svg&icon_color=%23d4a017&title=Visitors&edge_flat=true" alt="Visitor Count" style="height:28px;border-radius:3px;"/>
+    <div class="counter-display">
+      <div class="counter-digit-wrap" id="counterDigits">
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+        <div class="counter-digit">0</div>
+      </div>
+    </div>
     <div class="counter-since">Since 2026</div>
   </div>
 </div>
@@ -560,8 +569,21 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Visitor counter handled by hits.seeyoufarm.com badge image
+// Visitor counter using counterapi.dev (free, reliable)
+async function updateCounter() {
+  try {
+    const res = await fetch('https://api.counterapi.dev/v1/aidthroughmusic/visits/up');
+    const data = await res.json();
+    const count = String(data.count).padStart(6, '0');
+    const digits = document.querySelectorAll('#counterDigits .counter-digit');
+    digits.forEach((d, i) => { d.textContent = count[i] || '0'; });
+  } catch(e) {
+    console.log('Counter unavailable');
+  }
+}
+updateCounter();
 
 </script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
