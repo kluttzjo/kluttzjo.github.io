@@ -482,7 +482,8 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
         </div>
       </div>
       <div>
-        <form class="contact-form" action="#" method="POST">
+        <form class="contact-form" id="mainContactForm">
+          <input type="hidden" name="access_key" value="d5848d48-1552-4f54-b208-b92d929b769f"/>
           <div class="form-group">
             <label>Your Name</label>
             <input type="text" name="name" placeholder="John Smith" required/>
@@ -506,6 +507,8 @@ footer{background:#080808;border-top:1px solid rgba(212,160,23,0.15);padding:3re
             <textarea name="message" placeholder="Tell us a bit about yourself and how you'd like to get involved..." required></textarea>
           </div>
           <button type="submit" class="submit-btn">Send Message</button>
+          <p id="mainFormSuccess" style="display:none;color:#3db54a;font-size:0.9rem;margin-top:1rem;text-align:center;font-weight:600;">✓ Message sent! We'll be in touch soon.</p>
+          <p id="mainFormError" style="display:none;color:#e63b2e;font-size:0.9rem;margin-top:1rem;text-align:center;">Something went wrong. Please email us directly at info@aidthroughmusic.org</p>
         </form>
       </div>
     </div>
@@ -568,6 +571,40 @@ document.addEventListener('click', (e) => {
     closeMenu();
   }
 });
+
+// AJAX Form Submission for Web3Forms
+async function submitForm(formEl, successId, errorId) {
+  const formData = new FormData(formEl);
+  const data = Object.fromEntries(formData);
+  data.subject = data.subject || 'New Message - AMP Productions';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    if(result.success) {
+      formEl.reset();
+      document.getElementById(successId).style.display = 'block';
+      document.getElementById(errorId).style.display = 'none';
+    } else {
+      document.getElementById(errorId).style.display = 'block';
+      document.getElementById(successId).style.display = 'none';
+    }
+  } catch(e) {
+    document.getElementById(errorId).style.display = 'block';
+    document.getElementById(successId).style.display = 'none';
+  }
+}
+
+const mainForm = document.getElementById('mainContactForm');
+if(mainForm) {
+  mainForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitForm(this, 'mainFormSuccess', 'mainFormError');
+  });
+}
 
 // Visitor counter using counterapi.dev (free, reliable)
 async function updateCounter() {
